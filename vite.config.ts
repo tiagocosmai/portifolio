@@ -24,6 +24,7 @@ export default defineConfig({
         "src/vite-env.d.ts",
         "**/*.config.*",
         "scripts/**",
+        "src/test/**",
       ],
     },
   },

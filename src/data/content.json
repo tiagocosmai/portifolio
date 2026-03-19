@@ -201,7 +201,6 @@
           "ExpressJS",
           "Linux",
           "Bash",
-          "IA",
           "MUI",
           "SpringBoot",
           "Java",
@@ -216,6 +215,85 @@
           "MongoDB",
           "Elasticsearch"
         ]
+      },
+      {
+        "icon": "sparkles",
+        "title": {
+          "pt": "Inteligência Artificial & Agentes",
+          "en": "Artificial Intelligence & Agents",
+          "es": "Inteligencia artificial y agentes"
+        },
+        "descriptions": [
+          {
+            "pt": "Concepção e implementação de soluções com LLMs, orquestração com LangChain e LangGraph, fluxos com memória e ferramentas, e padrões RAG para grounding em dados próprios. Experiência prática com observabilidade (Langfuse), automação de workflows (n8n, Flowise) e boas práticas de engenharia de prompt.",
+            "en": "Design and delivery of LLM-powered solutions using LangChain and LangGraph, flows with memory and tools, and RAG patterns for grounding on your own data. Hands-on with observability (Langfuse), workflow automation (n8n, Flowise) and solid prompt-engineering practice.",
+            "es": "Diseño e implementación de soluciones con LLMs, orquestación con LangChain y LangGraph, flujos con memoria y herramientas, y patrones RAG para aterrizar en datos propios. Experiencia con observabilidad (Langfuse), automatización de flujos (n8n, Flowise) y buenas prácticas de prompt engineering."
+          },
+          {
+            "pt": "Visão de produto em IA generativa: prototipagem rápida, avaliação de modelos, custos e riscos, e colaboração com negócio para casos de uso reais — de assistentes internos a pipelines de dados e agentes especializados.",
+            "en": "Product-minded generative AI: rapid prototyping, model evaluation, cost and risk awareness, and partnering with the business on real use cases—from internal copilots to data pipelines and specialized agents.",
+            "es": "Visión de producto en IA generativa: prototipado rápido, evaluación de modelos, costes y riesgos, y alineación con negocio para casos reales: desde copilotos internos hasta pipelines de datos y agentes especializados."
+          }
+        ],
+        "stack": {
+          "pt": [
+            "LangChain",
+            "LangGraph",
+            "LLM",
+            "Agentes",
+            "RAG",
+            "Engenharia de prompt",
+            "Langfuse",
+            "n8n",
+            "Flowise",
+            "Workflows de IA",
+            "IA generativa",
+            "OpenAI API",
+            "Observabilidade (LLM)",
+            "Data Science",
+            "Engenheiro de IA",
+            "Fine-tuning",
+            "TypeScript"
+          ],
+          "en": [
+            "LangChain",
+            "LangGraph",
+            "LLMs",
+            "AI agents",
+            "RAG",
+            "Prompt engineering",
+            "Langfuse",
+            "n8n",
+            "Flowise",
+            "AI workflows",
+            "Generative AI",
+            "OpenAI API",
+            "LLM observability",
+            "Data science",
+            "AI engineer",
+            "Fine-tuning",
+            "TypeScript"
+          ],
+          "es": [
+            "LangChain",
+            "LangGraph",
+            "LLM",
+            "Agentes de IA",
+            "RAG",
+            "Ingeniería de prompts",
+            "Langfuse",
+            "n8n",
+            "Flowise",
+            "Flujos de IA",
+            "IA generativa",
+            "OpenAI API",
+            "Observabilidad (LLM)",
+            "Data science",
+            "Ingeniero de IA",
+            "Fine-tuning",
+            "TypeScript"
+          ]
+        }
       }
     ]
   },

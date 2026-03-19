@@ -28,7 +28,7 @@ export interface PickedContent {
   expertise: {
     title: string;
     cards: {
-      icon: "cpu" | "network";
+      icon: "cpu" | "network" | "sparkles";
       title: string;
       descriptions: string[];
       stack: string[];

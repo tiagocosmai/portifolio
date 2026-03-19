@@ -1,4 +1,4 @@
-import { Cpu, Network } from "lucide-react";
+import { Cpu, Network, Sparkles } from "lucide-react";
 import { useThemeMode } from "../context/ThemeContext";
 import { useLocale } from "../context/LocaleContext";
 import { sectionHeadingClass } from "../lib/sectionHeading";
@@ -7,6 +7,7 @@ import { SectionTitleIcon } from "../lib/sectionIcons";
 const ICONS = {
   cpu: Cpu,
   network: Network,
+  sparkles: Sparkles,
 } as const;
 
 function Chip({ label }: { label: string }) {
@@ -49,7 +50,7 @@ export default function Expertise() {
           />
           {t("nav_expertise")}
         </h1>
-        <div className="grid grid-cols-1 gap-14 md:grid-cols-2 md:gap-16">
+        <div className="grid grid-cols-1 gap-14 md:grid-cols-2 md:gap-16 lg:grid-cols-3 lg:gap-14">
           {expertise.cards.map((card, i) => {
             const Icon = ICONS[card.icon];
             return (
