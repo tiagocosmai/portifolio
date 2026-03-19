@@ -100,6 +100,11 @@
   "courses_section_distance": { "pt": "Cursos e treinamentos a distância", "en": "Online courses & training", "es": "Cursos y formación a distancia" },
   "courses_section_presential": { "pt": "Cursos e treinamentos presenciais", "en": "In-person training", "es": "Formación presencial" },
   "courses_section_events": { "pt": "Participações em eventos e palestras", "en": "Events & talks", "es": "Eventos y charlas" },
+  "courses_certificate_link": {
+    "pt": "Credencial ↗",
+    "en": "Certificate ↗",
+    "es": "Credencial ↗"
+  },
   "history_show_more": { "pt": "Ver mais", "en": "Show more", "es": "Ver más" },
   "history_show_less": { "pt": "Ver menos", "en": "Show less", "es": "Ver menos" },
   "history_hard_skills": {

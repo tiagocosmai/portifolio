@@ -4,12 +4,14 @@ const PROVIDER_EN: Record<string, string> = {
   "Fundação Bradesco": "Bradesco Foundation",
   "Azure na prática": "Azure in practice",
   "Aliança Brasileira pela Educação": "Brazilian Alliance for Education",
+  "LinkedIn Learning": "LinkedIn Learning",
 };
 
 const PROVIDER_ES: Record<string, string> = {
   "Fundação Bradesco": "Fundación Bradesco",
   "Azure na prática": "Azure en la práctica",
   "Aliança Brasileira pela Educação": "Alianza Brasileña por la Educación",
+  "LinkedIn Learning": "LinkedIn Learning",
 };
 
 export function localizeCourseProvider(provider: string, locale: Locale): string {
@@ -29,6 +31,16 @@ function toEn(s: string): string {
       "Scrum + XP = eXtreme agility – Global Code – 2009 – 3 hours",
     "Treinamento em SCRUM com Fábio Câmara, pela empresa Thomas Greg & Sons – 2010 – 5 Horas":
       "SCRUM training with Fábio Câmara, Thomas Greg & Sons – 2010 – 5 hours",
+    "Fundamentos para Análise de Dados por Microsoft e LinkedIn – 2024 – 10 Horas":
+      "Data analysis fundamentals by Microsoft and LinkedIn – 2024 – 10 hours",
+    "Introdução à Ciência de Dados: Como Contar Histórias com Dados – 2024 – 2 Horas":
+      "Introduction to data science: telling stories with data – 2024 – 2 hours",
+    "Análise de Dados Parte 1: Conceitos Básicos – 2024 – 4 Horas":
+      "Data analysis part 1: basic concepts – 2024 – 4 hours",
+    "Análise de Dados Parte 2: Ampliação e Aplicação do Conhecimento Básico – 2024 – 4 Horas":
+      "Data analysis part 2: expanding and applying basic knowledge – 2024 – 4 hours",
+    "Introdução às Competências Essenciais para a Carreira de Análise de Dados – 2022 – 3 Horas":
+      "Introduction to essential skills for a data analyst career – 2022 – 3 hours",
   };
   if (exact[s]) return exact[s];
 
@@ -241,6 +253,16 @@ function toEs(s: string): string {
       "Scrum + XP = agilidad eXtrema – Global Code – 2009 – 3 horas",
     "Treinamento em SCRUM com Fábio Câmara, pela empresa Thomas Greg & Sons – 2010 – 5 Horas":
       "Formación en SCRUM con Fábio Câmara, Thomas Greg & Sons – 2010 – 5 horas",
+    "Fundamentos para Análise de Dados por Microsoft e LinkedIn – 2024 – 10 Horas":
+      "Fundamentos de análisis de datos por Microsoft y LinkedIn – 2024 – 10 horas",
+    "Introdução à Ciência de Dados: Como Contar Histórias com Dados – 2024 – 2 Horas":
+      "Introducción a la ciencia de datos: contar historias con datos – 2024 – 2 horas",
+    "Análise de Dados Parte 1: Conceitos Básicos – 2024 – 4 Horas":
+      "Análisis de datos parte 1: conceptos básicos – 2024 – 4 horas",
+    "Análise de Dados Parte 2: Ampliação e Aplicação do Conhecimento Básico – 2024 – 4 Horas":
+      "Análisis de datos parte 2: ampliación y aplicación del conocimiento básico – 2024 – 4 horas",
+    "Introdução às Competências Essenciais para a Carreira de Análise de Dados – 2022 – 3 Horas":
+      "Introducción a las competencias esenciales para la carrera de análisis de datos – 2022 – 3 horas",
   };
   if (exact[s]) return exact[s];
 
@@ -436,7 +458,7 @@ export function localizeCourseLine(pt: string, locale: Locale): string {
   return toEs(pt);
 }
 
-export type CourseItemPt = { pt: string };
+export type CourseItemPt = { pt: string; certificate_url?: string };
 export type CourseGroupPt = {
   provider: string;
   url: string;

@@ -329,6 +329,32 @@
           "pt": "Conceitos Ageis: SCRUM – 2023 – 4 Horas"
         }
       ]
+    },
+    {
+      "provider": "LinkedIn Learning",
+      "url": "https://www.linkedin.com/learning/",
+      "items": [
+        {
+          "pt": "Fundamentos para Análise de Dados por Microsoft e LinkedIn – 2024 – 10 Horas",
+          "certificate_url": "https://www.linkedin.com/learning/certificates/48cb19c740e3f983bc1a72e6f6fe4153002cb8c5b6869f04350fedc0b8300877"
+        },
+        {
+          "pt": "Introdução à Ciência de Dados: Como Contar Histórias com Dados – 2024 – 2 Horas",
+          "certificate_url": "https://www.linkedin.com/learning/certificates/344444e3e21fb31e2ce42d83720ca7a6f87b3a8f0ea5261d056a74c0d20d9f76"
+        },
+        {
+          "pt": "Análise de Dados Parte 1: Conceitos Básicos – 2024 – 4 Horas",
+          "certificate_url": "https://www.linkedin.com/learning/certificates/ffdae1fa0492ea66b28a7c5e032265800286adf3e33ed41dd1b682311dba7a5f"
+        },
+        {
+          "pt": "Análise de Dados Parte 2: Ampliação e Aplicação do Conhecimento Básico – 2024 – 4 Horas",
+          "certificate_url": "https://www.linkedin.com/learning/certificates/0d176d60b86d794c696b54acca2cda9b1bf556374ddb7c8ccb96f124c52d350d"
+        },
+        {
+          "pt": "Introdução às Competências Essenciais para a Carreira de Análise de Dados – 2022 – 3 Horas",
+          "certificate_url": "https://www.linkedin.com/learning/certificates/64cf608a0c35e8c4491dc5738c1e0427de83cbd972469b0ea8c9a06e2ad785ea"
+        }
+      ]
     }
   ],
   "presential": [

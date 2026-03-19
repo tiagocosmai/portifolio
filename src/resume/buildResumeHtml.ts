@@ -564,7 +564,10 @@ function blockCourses(locale: Locale): string {
   const distanceGroups = d.distance.map((g) => ({
     provider: localizeCourseProvider(g.provider, locale),
     url: g.url,
-    items: g.items.map((it) => localizeCourseLine(it.pt, locale)),
+    items: g.items.map((it) => ({
+      line: localizeCourseLine(it.pt, locale),
+      certificateUrl: it.certificate_url?.trim() || "",
+    })),
   }));
   const presentialItems = d.presential.map((it) =>
     localizeCourseLine(it.pt, locale),
@@ -575,9 +578,17 @@ function blockCourses(locale: Locale): string {
     for (const g of distanceGroups) {
       inner += `<div class="course-block">`;
       inner += g.url
-        ? `<h4>${esc(g.provider)}</h4>`
+        ? `<h4><a href="${esc(g.url)}" class="main-link">${esc(g.provider)}</a></h4>`
         : `<h4>${esc(g.provider)}</h4>`;
-      inner += `<ul>${g.items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul></div>`;
+      inner += `<ul>${g.items
+        .map((it) => {
+          let li = `<li>${esc(it.line)}`;
+          if (it.certificateUrl)
+            li += ` <a href="${esc(it.certificateUrl)}" class="main-link">${esc(t(locale, "courses_certificate_link"))}</a>`;
+          li += `</li>`;
+          return li;
+        })
+        .join("")}</ul></div>`;
     }
   }
   if (presentialItems.length) {

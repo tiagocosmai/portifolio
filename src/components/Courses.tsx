@@ -27,7 +27,10 @@ export default function Courses() {
       distanceGroups: d.distance.map((g) => ({
         provider: localizeCourseProvider(g.provider, locale),
         url: g.url,
-        items: g.items.map((it) => localizeCourseLine(it.pt, locale)),
+        items: g.items.map((it) => ({
+          line: localizeCourseLine(it.pt, locale),
+          certificateUrl: it.certificate_url?.trim() || undefined,
+        })),
       })),
       presentialItems: d.presential.map((it) => localizeCourseLine(it.pt, locale)),
       eventItems: d.events.map((it) => localizeCourseLine(it.pt, locale)),
@@ -72,13 +75,26 @@ export default function Courses() {
                   )}
                 </h4>
                 <ul className={`${colClass} text-sm leading-relaxed ${muted}`}>
-                  {g.items.map((line, i) => (
+                  {g.items.map((it, i) => (
                     <li
                       key={i}
                       className="mb-2 break-inside-avoid pl-1"
                       style={{ pageBreakInside: "avoid" }}
                     >
-                      {line}
+                      {it.line}
+                      {it.certificateUrl ? (
+                        <>
+                          {" "}
+                          <a
+                            href={it.certificateUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className={linkC}
+                          >
+                            {t("courses_certificate_link")}
+                          </a>
+                        </>
+                      ) : null}
                     </li>
                   ))}
                 </ul>
