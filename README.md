@@ -1,208 +1,158 @@
-<p align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=200&section=header&text=Tiago%20Cosmai&fontSize=40&fontColor=ffffff&animation=fadeIn"/>
-</p>
+# Portifólio — site estático (React + Vite)
 
-<p align="center">
-<img src="https://readme-typing-svg.herokuapp.com/?color=36BCF7&size=24&center=true&vCenter=true&width=600&lines=Senior+Software+Engineer;Systems+Architecture;Distributed+Systems;Technical+Leadership;20%2B+Years+Building+Software"/>
-</p>
+Site pessoal em **React 19**, **TypeScript**, **Vite 6** e **Tailwind CSS**, com conteúdo dirigido por **JSON** (três idiomas: PT / EN / ES). O build é estático e publicado na **raiz** de **[tiagocosmai.github.io](https://tiagocosmai.github.io)**.
 
-<p align="center">
-  <a href="https://github.com/tiagocosmai/portifolio"><strong>Repositório</strong></a>
-  &nbsp;·&nbsp;
-  <a href="https://tiagocosmai.github.io"><strong>Site (GitHub Pages)</strong></a>
-</p>
+[![Test](https://github.com/tiagocosmai/portifolio/actions/workflows/test.yml/badge.svg)](https://github.com/tiagocosmai/portifolio/actions/workflows/test.yml)
+[![Deploy GitHub Pages](https://github.com/tiagocosmai/portifolio/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/tiagocosmai/portifolio/actions/workflows/deploy-pages.yml)
+[![codecov](https://codecov.io/gh/tiagocosmai/portifolio/graph/badge.svg)](https://codecov.io/gh/tiagocosmai/portifolio)
 
----
-
-# 👋 About Me | Sobre mim
-
-🇺🇸  
-Senior Software Engineer with **20+ years of experience** building scalable and high-impact software platforms.
-
-I operate at the intersection of **software engineering, systems architecture and technical leadership**, helping teams design robust distributed systems and evolve complex platforms.
-
-My background includes **e-commerce platforms, pricing engines, payment integrations and high scale backend systems**.
-
-Currently evolving towards **Staff / Principal Engineering roles**, contributing to architectural strategy, engineering culture and platform scalability.
-
-🇧🇷  
-
-Sou **Senior Software Engineer com mais de 20 anos de experiência** no desenvolvimento de sistemas escaláveis e de alto impacto.
-
-Atuo na interseção entre **engenharia de software, arquitetura de sistemas e liderança técnica**, ajudando times a evoluir plataformas complexas.
-
-Tenho experiência com **sistemas distribuídos, e-commerce, precificação, pagamentos e integrações em larga escala**.
+| | |
+|---|---|
+| **Repositório (código)** | [github.com/tiagocosmai/portifolio](https://github.com/tiagocosmai/portifolio) |
+| **Site em produção** | [tiagocosmai.github.io](https://tiagocosmai.github.io) |
+| **Repositório só do Pages** | [github.com/tiagocosmai/tiagocosmai.github.io](https://github.com/tiagocosmai/tiagocosmai.github.io) (branch `gh-pages`) |
 
 ---
 
-# 🧠 Tech Stack
+## Visão geral
 
-### Backend
+- **SPA** servida como ficheiros estáticos (`npm run build` → pasta `dist/`).
+- **Internacionalização**: textos em `content.json` e `resources.json`; resolução em tempo de execução com `deepPick` conforme o idioma (`LocaleContext`).
+- **Currículo / PDF**: geração a partir dos mesmos dados (`ResumeDownload`, `buildResumeHtml`, etc.).
+- **Cursos**: fonte editável em `courses.txt` → `npm run sync:courses` gera `courses.json`; EN/ES via `courseI18n.ts`.
 
-<p>
-<img src="https://skillicons.dev/icons?i=cs,express,graphql,java,kafka,maven,nestjs,nodejs,py,rabbitmq,spring"/>
-</p>
+Documentação extra em `docs/`:
 
-### Frontend
-
-<p>
-<img src="https://skillicons.dev/icons?i=react,redux,html,css,bootstrap,js,ts,jest,jquery,md,materialui,nextjs,sass,tailwind,wordpress"/>
-</p>
-
-### Infrastructure
-
-<p>
-<img src="https://skillicons.dev/icons?i=aws,bash,bitbucket,docker,git,github,gitlab,githubactions,grafana,jenkins,kubernetes,linux,npm"/>
-</p>
-
-### Database
-
-<p>
-<img src="https://skillicons.dev/icons?i=elasticsearch,mongodb,mysql,postgres,redis,sqlite,supabase"/>
-</p>
+- [`docs/I18N.md`](docs/I18N.md) — idiomas e chaves de UI  
+- [`docs/COURSES.md`](docs/COURSES.md) — formato de `courses.txt` e traduções  
+- [`docs/CONTACT-RESEND.md`](docs/CONTACT-RESEND.md) — contacto (quando ativo)  
+- [`DEPLOY.md`](DEPLOY.md) — segredos, PAT e GitHub Pages  
 
 ---
 
-# 🏗 Architecture & Engineering Interests
+## Requisitos
 
-- Distributed Systems
-- Microservices Architecture
-- Event Driven Systems
-- Domain Driven Design (DDD)
-- Clean Architecture
-- SOLID
-- Hexagonal Architecture
-- API Platform Design
-- High Scalability Systems
-- Software Platform Evolution
-- Engineering Culture
+- **Node.js** 22.x (alinhado com CI)  
+- **npm** 10+
 
----
+## Scripts
 
-# 🧩 Engineering Principles
+| Comando | Descrição |
+|--------|-----------|
+| `npm run dev` | Servidor de desenvolvimento (Vite) |
+| `npm run build` | `tsc --noEmit` + build de produção em `dist/` |
+| `npm run preview` | Pré-visualização local do `dist/` |
+| `npm run test` | Testes (Vitest) |
+| `npm run test:coverage` | Testes + relatório de cobertura |
+| `npm run test:watch` | Vitest em modo watch |
+| `npm run sync:courses` | Regenera `src/data/courses.json` a partir de `courses.txt` |
+| `npm run deploy` | Build + publicação na branch `gh-pages` de `tiagocosmai.github.io` (local; ver `DEPLOY.md`) |
 
-Good software systems should be:
-
-✔ Scalable  
-✔ Maintainable  
-✔ Observable  
-✔ Resilient  
-✔ Aligned with the business domain  
-
-I believe that **great engineering is not just about writing code — it's about building systems and enabling teams to evolve.**
+**Base URL:** `vite.config.ts` usa `base: "/"` para o site servido na raiz do domínio `*.github.io` do utilizador.
 
 ---
 
-# 🤝 Technical Leadership
+## Testes e cobertura
 
-Throughout my career I have contributed by:
+- **`npm run test`** — suíte mínima; podes expandir com mais ficheiros `*.test.tsx`.
+- **`npm run test:coverage`** — gera:
+  - relatório HTML: abre **`coverage/index.html`** no browser;
+  - **`coverage/lcov.info`** — usado no CI para o [Codecov](https://codecov.io/gh/tiagocosmai/portifolio).
 
-- mentoring engineers
-- influencing architectural decisions
-- improving engineering standards
-- supporting cross-team collaboration
-- evolving legacy systems into modern architectures
+No GitHub Actions (workflow **Test**), a cobertura é enviada para o Codecov após cada push/PR nas branches `main` ou `master`. O badge no topo do README passa a refletir a percentagem quando o Codecov tiver recebido o primeiro relatório (repositório público; token opcional).
 
----
-
-# 🚀 Featured Projects
-
-### Pricing Engine
-
-High performance pricing and promotion engine designed for e-commerce platforms.
-
-### Distributed API Platform
-
-Backend platform based on **Node.js + microservices architecture**.
-
-### Microfrontend Platform
-
-Frontend architecture using **React + Next.js + microfrontends**.
-
-*(You can link repositories here later)*
+**Nota:** a cobertura atual é limitada (poucos testes); módulos como `Contact.tsx`, geração de PDF/HTML do CV e parte de `Navigation` aparecem com percentagens baixas até haver mais testes.
 
 ---
 
-# 🏅 Certifications
+## Dados em `src/data/` — como dinamizar o site
 
-You can find my certifications and credentials here:
+### `content.json` — conteúdo principal por secção
 
-🔗  
-https://www.credly.com/users/tiago-cosmai/badges
+Ficheiro grande com a estrutura do portfólio. A maior parte dos textos usa o padrão **triplo** para i18n:
 
----
+```json
+{ "pt": "…", "en": "…", "es": "…" }
+```
 
-# 🌐 Connect with Me
+O `LocaleProvider` importa o JSON e aplica **`deepPick(rawContent, locale)`**, produzindo o tipo **`PickedContent`** (`src/types/content.ts`): uma árvore já “achatada” para o idioma atual (só strings, arrays e objetos finais).
 
-<p>
+**Secções principais** (chaves de topo em `content.json`):
 
-<a href="https://www.linkedin.com/in/tiagocosmai/">
-<img src="https://img.shields.io/badge/LinkedIn-Tiago%20Cosmai-blue?style=for-the-badge&logo=linkedin"/>
-</a>
+| Chave | Uso |
+|-------|-----|
+| `main` | Nome, cargo, avatar, redes (`social`), parágrafos introdutórios |
+| `expertise` | Título + cartões (título, descrições, stack por idioma) |
+| `certifications` | Selos Credly, imagens, links |
+| `education` | Formação (datas, logos em `public/education-logos/` ou `logo_domain`) |
+| `languages` | Idiomas e níveis CEFR |
+| `history` | Experiência profissional (timeline) |
+| `hobbies` | Ícones + rótulos |
+| `projects` | Projetos profissionais / afiliação |
+| `personal_projects` | Repositórios, `github_url`, `live_url` opcional |
+| `contact` | Títulos da secção contacto |
+| `footer` | Créditos e links do rodapé |
 
-<a href="https://github.com/tiagocosmai">
-<img src="https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github"/>
-</a>
+Campos que **não** são traduzidos (ex.: nome próprio, URLs, emails) permanecem como **string** simples.
 
-<a href="https://www.credly.com/users/tiago-cosmai/badges">
-<img src="https://img.shields.io/badge/Credly-Certifications-orange?style=for-the-badge&logo=credly"/>
-</a>
+Para alterar copy de secções: edita `content.json` mantendo a estrutura; se adicionares novos blocos com `{ pt, en, es }`, o TypeScript em `PickedContent` pode exigir atualizar `src/types/content.ts`.
 
-</p>
+### `resources.json` — UI e acessibilidade
 
----
+Mapa **`chave → { pt, en, es }`** para tudo que não é “conteúdo editorial” longo:
 
-# 📊 GitHub Stats
+- títulos da navegação, botões, temas, `aria-label`, mensagens de formulário, etc.
 
-<p align="center">
+Novas chaves: inclui sempre **três** idiomas e usa `t("minha_chave")` via `useLocale()` nos componentes. Detalhes em [`docs/I18N.md`](docs/I18N.md).
 
-<img width="60%" src="https://github-readme-stats.vercel.app/api/top-langs?username=tiagocosmai&show_icons=true&locale=en&theme=tokyonight" alt="tiagocosmai" />
+### `config.json` — site e modos de CV
 
-</p>
+- **`site`**: `portfolioUrl`, limite de parágrafos no hero (`mainIntroParagraphsMax`).
+- **`resume.modes`**: modos do currículo (`ultra_compact`, `compact`, `complete`, …) com listas de secções e flags de detalhe (histórico, skills, certificações, etc.) usados na geração do PDF/HTML.
 
-<p align="center">
+### Cursos: `courses.txt` → `courses.json`
 
-<img width="60%" src="https://github-readme-stats.vercel.app/api?username=tiagocosmai&show_icons=true&locale=en&theme=tokyonight"/>
+- Edita **`src/data/courses.txt`** (blocos `===Provedor===` ou `===Provedor|url===`, separadores `===PRESENCIAL===` e `===EVENTOS===`).
+- Corre **`npm run sync:courses`** para atualizar **`courses.json`** (itens com campo `pt`).
+- Traduções EN/ES: regras em **`src/lib/courseI18n.ts`** (ver [`docs/COURSES.md`](docs/COURSES.md)).
 
-</p>
+### Imagens e ficheiros estáticos
 
-<p align="center">
+- **`public/`** — favicons, manifest, logos referenciados no JSON (`/education-logos/...`, etc.), `robots.txt`, `_redirects` (ex.: Netlify).
 
-<img width="60%" src="https://github-readme-streak-stats.herokuapp.com/?user=tiagocosmai&theme=tokyonight"/>
+### Funcionalidades (flags)
 
-</p>
-
----
-
-# 📈 GitHub Activity Graph
-
-<p align="center">
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=tiagocosmai&theme=tokyo-night"/>
-</p>
-
----
-
-# 👀 Profile Views
-
-<p align="center">
-<img src="https://komarev.com/ghpvc/?username=tiagocosmai&color=blue"/>
-<img src="https://img.shields.io/github/last-commit/tiagocosmai/tiagocosmai"/>
-<img alt="GitHub followers" src="https://img.shields.io/github/followers/tiagocosmai">
-</p>
+- **`src/config/features.ts`** — por exemplo `SHOW_CONTACT` liga ou desliga a secção Contact e o respetivo item na navegação.
 
 ---
 
-# 💡 Engineering Philosophy
+## Pipeline: deploy na URL raiz (`https://tiagocosmai.github.io/`)
 
-> “Software is a tool to generate real business impact.”
+O repositório **`portifolio`** contém **apenas o código-fonte**. O GitHub Pages do **utilizador** exige o repositório nomeado **`username.github.io`**; por isso o deploy **não** usa a pasta `docs/` nem a branch `gh-pages` deste repo para o site principal.
 
-My mission as an engineer is to:
+### Fluxo resumido
 
-- build scalable platforms
-- improve engineering culture
-- support team growth
-- deliver sustainable technology solutions
+1. **Push** em `main` ou `master` em **`tiagocosmai/portifolio`** dispara [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml).
+2. **CI** instala dependências (`npm ci`), corre **`npm run build`** (Vite com `base: "/"`).
+3. **Validação** do `dist/index.html`: existe, referencia `assets/`, **não** referencia `main.tsx`, **não** usa path `/tiagocosmai/` (garante site na raiz do domínio).
+4. **Publicação** com `peaceiris/actions-gh-pages@v4`:
+   - **`external_repository`:** `tiagocosmai/tiagocosmai.github.io`
+   - **`publish_branch`:** `gh-pages`
+   - **`publish_dir`:** `./dist`
+   - **`personal_token`:** secret **`GH_PAGES_TOKEN`** (PAT classic com scope `repo`), porque o `GITHUB_TOKEN` do workflow não faz push noutro repositório por defeito.
+
+### No repositório `tiagocosmai.github.io`
+
+- **Settings → Pages:** origem **Deploy from a branch**, branch **`gh-pages`**, pasta **`/` (root)**.
+
+### Localmente
+
+- **`npm run deploy`** — mesmo destino (`gh-pages` de `tiagocosmai.github.io`), com validação do `dist/`. Requer permissão de push nesse repositório.
+
+Instruções completas (criação do PAT, primeiro deploy): **[`DEPLOY.md`](DEPLOY.md)**.
 
 ---
 
-⭐ Thanks for visiting my profile
+## Licença
+
+Ver ficheiro [`LICENSE`](LICENSE).

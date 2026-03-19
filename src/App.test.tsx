@@ -6,7 +6,7 @@ describe("App", () => {
   it("renderiza o hero", () => {
     const { getByRole } = render(<App />);
     expect(
-      getByRole("heading", { name: /yuji sato/i }),
+      getByRole("heading", { name: /tiago cosmai/i }),
     ).toBeInTheDocument();
   });
 });
