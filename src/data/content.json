@@ -1607,12 +1607,7 @@
           "es": "Sitio educativo para construir tu propia vitrola de cartón. Proyecto escolar de mi hija; hice el sitio como material de apoyo."
         },
         "github_url": "https://github.com/tiagocosmai/record-player-site",
-        "live_url": "https://record-player-site.vercel.app/",
-        "status": {
-          "pt": "Projeto Offline",
-          "en": "Offline Project",
-          "es": "Proyecto offline"
-        }
+        "live_url": "https://record-player-expo-portinari.vercel.app/"
       },
       {
         "title": {
@@ -1640,12 +1635,7 @@
           "es": "Proyecto para ayudar a mi hija a prepararse para una competencia de deletreo en inglés."
         },
         "github_url": "https://github.com/tiagocosmai/spellingbee",
-        "live_url": "https://spellingbee-plum.vercel.app/",
-        "status": {
-          "pt": "Projeto Offline",
-          "en": "Offline Project",
-          "es": "Proyecto offline"
-        }
+        "live_url": "https://spellingbee-da-mali.vercel.app/"
       },
       {
         "title": {
@@ -1690,12 +1680,7 @@
           "en": "Challenge from a recruitment process exercise, implemented in Spring Boot.",
           "es": "Desafío de dinámica de proceso selectivo en Spring Boot."
         },
-        "github_url": "https://github.com/tiagocosmai/challenge-api",
-        "status": {
-          "pt": "Em desenvolvimento",
-          "en": "In development",
-          "es": "En desarrollo"
-        }
+        "github_url": "https://github.com/tiagocosmai/challenge-api"
       },
       {
         "title": {
