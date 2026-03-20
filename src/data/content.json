@@ -1671,6 +1671,24 @@
       },
       {
         "title": {
+          "pt": "People API — Spring Boot (estudo)",
+          "en": "People API — Spring Boot (study)",
+          "es": "People API — Spring Boot (estudio)"
+        },
+        "description": {
+          "pt": "Versão da People-API em Spring Boot 3: mesmos endpoints, JWT (access/refresh), papéis, MongoDB e seed — material de estudo para contrastar com o NestJS; Makefile e Docker alinhados ao fluxo do projeto original.",
+          "en": "Spring Boot 3 take on People-API: same endpoints, JWT (access/refresh), roles, MongoDB and seed — study companion to the NestJS version; Makefile and Docker mirror the original workflow.",
+          "es": "Versión Spring Boot 3 de People-API: mismos endpoints, JWT (access/refresh), roles, MongoDB y seed — material de estudio junto al NestJS; Makefile y Docker alineados al flujo del proyecto original."
+        },
+        "github_url": "https://github.com/tiagocosmai/people-study-springboot-api",
+        "status": {
+          "pt": "Em desenvolvimento",
+          "en": "In development",
+          "es": "En desarrollo"
+        }
+      },
+      {
+        "title": {
           "pt": "Challenge Compare-API",
           "en": "Challenge Compare-API",
           "es": "Challenge Compare-API"
