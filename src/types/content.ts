@@ -8,6 +8,7 @@ export interface PickedContent {
       github: string;
       linkedin: string;
       credly: string;
+      hackerrank: string;
       steam: string;
       playstation: string;
       instagram: string;
@@ -42,6 +43,8 @@ export interface PickedContent {
       description: string;
       /** Link público do selo na Credly */
       credly_url?: string;
+      /** Link público de verificação fora da Credly (ex.: HackerRank) */
+      verify_url?: string;
     }[];
   };
   education: {

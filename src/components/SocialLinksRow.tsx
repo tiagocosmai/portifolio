@@ -4,6 +4,7 @@ import {
   faDiscord,
   faFacebook,
   faGithub,
+  faHackerrank,
   faInstagram,
   faLinkedin,
   faPlaystation,
@@ -95,6 +96,15 @@ export function SocialLinksRow({
         aria-label={t("aria_credly")}
       >
         <FontAwesomeIcon icon={faAward} />
+      </a>
+      <a
+        href={main.social.hackerrank}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={linkHover}
+        aria-label={t("aria_hackerrank")}
+      >
+        <FontAwesomeIcon icon={faHackerrank} />
       </a>
       <a
         href={main.social.steam}

@@ -84,6 +84,15 @@ export default function Certifications() {
                 >
                   {t("certifications_verify_credly")} ↗
                 </a>
+              ) : item.verify_url ? (
+                <a
+                  href={item.verify_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`mt-2 inline-flex w-fit text-xs font-semibold ${linkC}`}
+                >
+                  {t("certifications_verify_external")} ↗
+                </a>
               ) : null}
             </div>
           </article>

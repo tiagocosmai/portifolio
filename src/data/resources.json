@@ -2,9 +2,9 @@
   "nav_expertise": { "pt": "Especialidades", "en": "Expertise", "es": "Experiencia" },
   "nav_certifications": { "pt": "Certificações", "en": "Certifications", "es": "Certificaciones" },
   "certifications_credly_intro": {
-    "pt": "Credenciais verificáveis na minha carteira Credly.",
-    "en": "Verifiable credentials on my Credly badge wallet.",
-    "es": "Credenciales verificables en mi cartera de insignias Credly."
+    "pt": "Credenciais verificáveis na Credly e noutras plataformas (ex.: HackerRank).",
+    "en": "Verifiable credentials on Credly and other platforms (e.g. HackerRank).",
+    "es": "Credenciales verificables en Credly y otras plataformas (p. ej. HackerRank)."
   },
   "certifications_credly_wallet": {
     "pt": "Ver carteira na Credly",
@@ -15,6 +15,11 @@
     "pt": "Verificar na Credly",
     "en": "Verify on Credly",
     "es": "Verificar en Credly"
+  },
+  "certifications_verify_external": {
+    "pt": "Ver certificado verificado",
+    "en": "View verified certificate",
+    "es": "Ver certificado verificado"
   },
   "nav_history": { "pt": "Experiência", "en": "Experience", "es": "Experiencia" },
   "nav_education": { "pt": "Formação", "en": "Education", "es": "Formación" },
@@ -49,6 +54,11 @@
     "pt": "Credly — certificações e selos",
     "en": "Credly — certifications and badges",
     "es": "Credly — certificaciones e insignias"
+  },
+  "aria_hackerrank": {
+    "pt": "Perfil no HackerRank",
+    "en": "HackerRank profile",
+    "es": "Perfil en HackerRank"
   },
   "aria_steam": { "pt": "Perfil na Steam", "en": "Steam profile", "es": "Perfil en Steam" },
   "aria_playstation": {
@@ -311,6 +321,11 @@
     "pt": "GitHub",
     "en": "GitHub",
     "es": "GitHub"
+  },
+  "resume_contact_hackerrank": {
+    "pt": "HackerRank",
+    "en": "HackerRank",
+    "es": "HackerRank"
   },
   "resume_contact_phone": {
     "pt": "Telefone",
