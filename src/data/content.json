@@ -1718,6 +1718,60 @@
       },
       {
         "title": {
+          "pt": "People API — FastAPI (estudo)",
+          "en": "People API — FastAPI (study)",
+          "es": "People API — FastAPI (estudio)"
+        },
+        "description": {
+          "pt": "Versão da People-API em FastAPI: mesmos endpoints, JWT com derivação SHA-256 (alinhado ao Spring), papéis, MongoDB, Motor, seed e Docker/Makefile — material de estudo para contrastar com NestJS e Spring Boot.",
+          "en": "FastAPI take on People-API: same endpoints, JWT with SHA-256 key derivation (Spring-aligned), roles, MongoDB, Motor, seed, Docker and Makefile — study companion alongside NestJS and Spring Boot.",
+          "es": "Versión FastAPI de People-API: mismos endpoints, JWT con derivación SHA-256 (alineado a Spring), roles, MongoDB, Motor, seed, Docker y Makefile — material de estudio junto a NestJS y Spring Boot."
+        },
+        "github_url": "https://github.com/tiagocosmai/people-study-fastapi-api",
+        "status": {
+          "pt": "Em desenvolvimento",
+          "en": "In development",
+          "es": "En desarrollo"
+        }
+      },
+      {
+        "title": {
+          "pt": "People API — Django (estudo)",
+          "en": "People API — Django (study)",
+          "es": "People API — Django (estudio)"
+        },
+        "description": {
+          "pt": "Versão da People-API em Django + Django REST Framework com camada PyMongo: mesmo contrato REST, JWT (SHA-256 como no Spring), RBAC, MongoDB, seed e stack Docker — estudo comparativo com as outras stacks.",
+          "en": "People-API on Django + DRF with a PyMongo-backed layer: same REST contract, JWT (SHA-256 like Spring), RBAC, MongoDB, seed and Docker stack — comparative study with the other stacks.",
+          "es": "People-API en Django + DRF con capa PyMongo: mismo contrato REST, JWT (SHA-256 como Spring), RBAC, MongoDB, seed y Docker — estudio comparativo con el resto de stacks."
+        },
+        "github_url": "https://github.com/tiagocosmai/people-study-django-api",
+        "status": {
+          "pt": "Em desenvolvimento",
+          "en": "In development",
+          "es": "En desarrollo"
+        }
+      },
+      {
+        "title": {
+          "pt": "People API — Flask (estudo)",
+          "en": "People API — Flask (study)",
+          "es": "People API — Flask (estudio)"
+        },
+        "description": {
+          "pt": "Versão da People-API em Flask + PyMongo síncrono: mesmos endpoints e regras, JWT (SHA-256), papéis, seed, OpenAPI/Swagger UI e Docker — material de estudo leve frente a FastAPI/Django.",
+          "en": "People-API on Flask + synchronous PyMongo: same endpoints and rules, JWT (SHA-256), roles, seed, OpenAPI/Swagger UI and Docker — lightweight study stack next to FastAPI/Django.",
+          "es": "People-API en Flask + PyMongo síncrono: mismos endpoints y reglas, JWT (SHA-256), roles, seed, OpenAPI/Swagger UI y Docker — stack de estudio ligero junto a FastAPI/Django."
+        },
+        "github_url": "https://github.com/tiagocosmai/people-study-flask-api",
+        "status": {
+          "pt": "Em desenvolvimento",
+          "en": "In development",
+          "es": "En desarrollo"
+        }
+      },
+      {
+        "title": {
           "pt": "Challenge Compare-API",
           "en": "Challenge Compare-API",
           "es": "Challenge Compare-API"
