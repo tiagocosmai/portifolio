@@ -77,6 +77,24 @@ describe("buildResumeHtml", () => {
     expect(html).toContain("mailto:");
   });
 
+  it("resume contact sidebar: LinkedIn/GitHub show URL as link text; no url-print; no HackerRank/Credly", () => {
+    const html = buildResumeHtml("en", "compact", { portfolioUrl });
+    const marker = '<div class="block contact-sidebar">';
+    const start = html.indexOf(marker);
+    expect(start).toBeGreaterThan(-1);
+    const block = html.slice(start, start + 6000);
+    expect(block).not.toContain('class="url-print"');
+    expect(block).toContain(
+      '<a class="main-link" href="https://www.linkedin.com/in/tiagocosmai/">https://www.linkedin.com/in/tiagocosmai/</a>',
+    );
+    expect(block).toContain(
+      '<a class="main-link" href="https://github.com/tiagocosmai">https://github.com/tiagocosmai</a>',
+    );
+    expect(block).toContain("tiagocosmai.github.io");
+    expect(block).not.toContain("hackerrank");
+    expect(block).not.toContain("credly");
+  });
+
   it("uses default custom selection when custom mode omits selection", () => {
     const html = buildResumeHtml("en", "custom", { portfolioUrl });
     expect(html).toContain("Tiago");
