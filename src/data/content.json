@@ -334,6 +334,20 @@
         }
       },
       {
+        "verify_url": "https://www.hackerrank.com/certificates/741fb37a367a",
+        "image_url": "https://cdn.simpleicons.org/hackerrank/00EA64",
+        "title": {
+          "pt": "Frontend Developer (React) — HackerRank",
+          "en": "Frontend Developer (React) — HackerRank",
+          "es": "Frontend Developer (React) — HackerRank"
+        },
+        "description": {
+          "pt": "Certificação de papel (role) verificada pela HackerRank: React, CSS e JavaScript no desenvolvimento front-end.",
+          "en": "HackerRank verified Frontend Developer (React) role certification: React, CSS, and JavaScript.",
+          "es": "Certificación de rol Frontend Developer (React) verificada por HackerRank: React, CSS y JavaScript."
+        }
+      },
+      {
         "credly_url": "https://www.credly.com/badges/ce1ca1af-f485-4696-b11d-88d2ca8d67c9",
         "image_url": "https://images.credly.com/images/cec5ca03-2ccf-4376-ace9-15c6d17b7358/blob",
         "title": {
