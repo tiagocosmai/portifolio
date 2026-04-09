@@ -243,6 +243,9 @@
         },
         {
           "pt": "Positividade e Inteligência Emocional (Instrutor Marcos Meda) – 2023 – 2 Horas"
+        },
+        {
+          "pt": "Python para Iniciantes (Instrutor: Tiago Miguel) – 2026 – 1 Hora"
         }
       ]
     },
@@ -431,6 +434,18 @@
     },
     {
       "pt": "Meetup – React (André Ricardo Pontes da Silva) – CVC Corp – 2020"
+    },
+    {
+      "pt": "MongoDB.local São Paulo – 2024"
+    },
+    {
+      "pt": "Webinar Datadog: Seu guia para um APM proativo e unificado – 2026 – 1 Hora"
+    },
+    {
+      "pt": "Meetup – Desenhando com IA Arquiteturas de Soluções: um exemplo com draw.io MCP Server + VS Code + Copilot – 2026 – 1 Hora"
+    },
+    {
+      "pt": "Meetup – Gerando diagramas de arquitetura com IA: um exemplo com draw.io MCP Server + VS Code – 2026 – 1 Hora"
     }
   ]
 }

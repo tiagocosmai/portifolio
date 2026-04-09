@@ -41,6 +41,15 @@ function toEn(s: string): string {
       "Data analysis part 2: expanding and applying basic knowledge – 2024 – 4 hours",
     "Introdução às Competências Essenciais para a Carreira de Análise de Dados – 2022 – 3 Horas":
       "Introduction to essential skills for a data analyst career – 2022 – 3 hours",
+    "Webinar Datadog: Seu guia para um APM proativo e unificado – 2026 – 1 Hora":
+      "Datadog webinar: your guide to proactive, unified APM – 2026 – 1 hour",
+    "Meetup – Desenhando com IA Arquiteturas de Soluções: um exemplo com draw.io MCP Server + VS Code + Copilot – 2026 – 1 Hora":
+      "Meetup – Designing solution architectures with AI: an example with draw.io MCP Server + VS Code + Copilot – 2026 – 1 hour",
+    "Meetup – Gerando diagramas de arquitetura com IA: um exemplo com draw.io MCP Server + VS Code – 2026 – 1 Hora":
+      "Meetup – Generating architecture diagrams with AI: an example with draw.io MCP Server + VS Code – 2026 – 1 hour",
+    "MongoDB.local São Paulo – 2024": "MongoDB.local São Paulo – 2024",
+    "Python para Iniciantes (Instrutor: Tiago Miguel) – 2026 – 1 Hora":
+      "Python for beginners (Instructor: Tiago Miguel) – 2026 – 1 hour",
   };
   if (exact[s]) return exact[s];
 
@@ -263,6 +272,15 @@ function toEs(s: string): string {
       "Análisis de datos parte 2: ampliación y aplicación del conocimiento básico – 2024 – 4 horas",
     "Introdução às Competências Essenciais para a Carreira de Análise de Dados – 2022 – 3 Horas":
       "Introducción a las competencias esenciales para la carrera de análisis de datos – 2022 – 3 horas",
+    "Webinar Datadog: Seu guia para um APM proativo e unificado – 2026 – 1 Hora":
+      "Webinar Datadog: tu guía para un APM proactivo y unificado – 2026 – 1 hora",
+    "Meetup – Desenhando com IA Arquiteturas de Soluções: um exemplo com draw.io MCP Server + VS Code + Copilot – 2026 – 1 Hora":
+      "Meetup – Diseñando arquitecturas de soluciones con IA: un ejemplo con draw.io MCP Server + VS Code + Copilot – 2026 – 1 hora",
+    "Meetup – Gerando diagramas de arquitetura com IA: um exemplo com draw.io MCP Server + VS Code – 2026 – 1 Hora":
+      "Meetup – Generando diagramas de arquitectura con IA: un ejemplo con draw.io MCP Server + VS Code – 2026 – 1 hora",
+    "MongoDB.local São Paulo – 2024": "MongoDB.local São Paulo – 2024",
+    "Python para Iniciantes (Instrutor: Tiago Miguel) – 2026 – 1 Hora":
+      "Python para principiantes (Instructor: Tiago Miguel) – 2026 – 1 hora",
   };
   if (exact[s]) return exact[s];
 

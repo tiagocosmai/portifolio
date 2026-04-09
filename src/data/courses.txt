@@ -72,6 +72,7 @@ Git e contribuições para projetos Open Source (Instrutor Bruno Orlandi) – 20
 React, Redux e integração de APIs (Instrutor Nataniel Paiva) – 2020 – 1,5 Horas
 Adobe XD: Design de Interfaces para Criação de Sites (Instrutor Diego Mariano) – 2020 – 2 Horas
 Positividade e Inteligência Emocional (Instrutor Marcos Meda) – 2023 – 2 Horas
+Python para Iniciantes (Instrutor: Tiago Miguel) – 2026 – 1 Hora
 ===Microsoft Virtual Academy|https://mva.microsoft.com/===
 Conceitos básicos de C# para iniciantes – 2019 – 8 Horas
 Fundamentos do C# com Clean Code – 2019 – 3 Horas
@@ -123,3 +124,7 @@ Webinar: DevOps: Pipeline e RFC – CVC Corp – 2020
 Webinar: DevOps: Vault e Consul – CVC Corp – 2020
 Webinar DevOps: Jenkins Jobs e AppStructure – CVC Corp – 2020
 Meetup – React (André Ricardo Pontes da Silva) – CVC Corp – 2020
+MongoDB.local São Paulo – 2024
+Webinar Datadog: Seu guia para um APM proativo e unificado – 2026 – 1 Hora
+Meetup – Desenhando com IA Arquiteturas de Soluções: um exemplo com draw.io MCP Server + VS Code + Copilot – 2026 – 1 Hora
+Meetup – Gerando diagramas de arquitetura com IA: um exemplo com draw.io MCP Server + VS Code – 2026 – 1 Hora
