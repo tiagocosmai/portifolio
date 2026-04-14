@@ -41,6 +41,8 @@ function toEn(s: string): string {
       "Data analysis part 2: expanding and applying basic knowledge – 2024 – 4 hours",
     "Introdução às Competências Essenciais para a Carreira de Análise de Dados – 2022 – 3 Horas":
       "Introduction to essential skills for a data analyst career – 2022 – 3 hours",
+    "Comunicação Assertiva para Gestores de Alto Desempenho – 2026 – 2 Horas":
+      "Assertive communication for high-performing managers – 2026 – 2 hours",
     "Webinar Datadog: Seu guia para um APM proativo e unificado – 2026 – 1 Hora":
       "Datadog webinar: your guide to proactive, unified APM – 2026 – 1 hour",
     "Meetup – Desenhando com IA Arquiteturas de Soluções: um exemplo com draw.io MCP Server + VS Code + Copilot – 2026 – 1 Hora":
@@ -50,6 +52,12 @@ function toEn(s: string): string {
     "MongoDB.local São Paulo – 2024": "MongoDB.local São Paulo – 2024",
     "Python para Iniciantes (Instrutor: Tiago Miguel) – 2026 – 1 Hora":
       "Python for beginners (Instructor: Tiago Miguel) – 2026 – 1 hour",
+    "Gestão e liderança de desenvolvedores – LinkedIn Learning – 2026 – 9 Horas":
+      "Managing and Leading Developers – LinkedIn Learning – 2026 – 9 hours",
+    "Meetup – Grafana + Inteligência Artificial: monitorando o consumo de tokens ao utilizar o Microsoft Foundry – 2026 – 3 Horas":
+      "Meetup – Grafana and artificial intelligence: monitoring token consumption with Microsoft Foundry – 2026 – 3 hours",
+    "Meetup – OWASP + API Security: dicas de segurança – Security Headers, CORS, manipulando informações sensíveis – 2026 – 3 Horas":
+      "Meetup – OWASP + API security: practical tips – security headers, CORS, handling sensitive information – 2026 – 3 hours",
   };
   if (exact[s]) return exact[s];
 
@@ -272,6 +280,8 @@ function toEs(s: string): string {
       "Análisis de datos parte 2: ampliación y aplicación del conocimiento básico – 2024 – 4 horas",
     "Introdução às Competências Essenciais para a Carreira de Análise de Dados – 2022 – 3 Horas":
       "Introducción a las competencias esenciales para la carrera de análisis de datos – 2022 – 3 horas",
+    "Comunicação Assertiva para Gestores de Alto Desempenho – 2026 – 2 Horas":
+      "Comunicación asertiva para gestores de alto rendimiento – 2026 – 2 horas",
     "Webinar Datadog: Seu guia para um APM proativo e unificado – 2026 – 1 Hora":
       "Webinar Datadog: tu guía para un APM proactivo y unificado – 2026 – 1 hora",
     "Meetup – Desenhando com IA Arquiteturas de Soluções: um exemplo com draw.io MCP Server + VS Code + Copilot – 2026 – 1 Hora":
@@ -281,6 +291,12 @@ function toEs(s: string): string {
     "MongoDB.local São Paulo – 2024": "MongoDB.local São Paulo – 2024",
     "Python para Iniciantes (Instrutor: Tiago Miguel) – 2026 – 1 Hora":
       "Python para principiantes (Instructor: Tiago Miguel) – 2026 – 1 hora",
+    "Gestão e liderança de desenvolvedores – LinkedIn Learning – 2026 – 9 Horas":
+      "Gestión y liderazgo de desarrolladores – LinkedIn Learning – 2026 – 9 horas",
+    "Meetup – Grafana + Inteligência Artificial: monitorando o consumo de tokens ao utilizar o Microsoft Foundry – 2026 – 3 Horas":
+      "Meetup – Grafana e inteligencia artificial: monitorizando el consumo de tokens con Microsoft Foundry – 2026 – 3 horas",
+    "Meetup – OWASP + API Security: dicas de segurança – Security Headers, CORS, manipulando informações sensíveis – 2026 – 3 Horas":
+      "Meetup – OWASP y seguridad de APIs: consejos – cabeceras de seguridad, CORS, tratamiento de información sensible – 2026 – 3 horas",
   };
   if (exact[s]) return exact[s];
 
@@ -476,7 +492,12 @@ export function localizeCourseLine(pt: string, locale: Locale): string {
   return toEs(pt);
 }
 
-export type CourseItemPt = { pt: string; certificate_url?: string };
+export type CourseItemPt = {
+  pt: string;
+  certificate_url?: string;
+  /** Recording / external link (e.g. YouTube) for events */
+  url?: string;
+};
 export type CourseGroupPt = {
   provider: string;
   url: string;

@@ -115,6 +115,11 @@
     "en": "Certificate ↗",
     "es": "Credencial ↗"
   },
+  "courses_event_recording_link": {
+    "pt": "Gravação ↗",
+    "en": "Recording ↗",
+    "es": "Grabación ↗"
+  },
   "history_show_more": { "pt": "Ver mais", "en": "Show more", "es": "Ver más" },
   "history_show_less": { "pt": "Ver menos", "en": "Show less", "es": "Ver menos" },
   "history_hard_skills": {

@@ -5,6 +5,7 @@ import {
   localizeCourseProvider,
   type CoursesDataPt,
 } from "../lib/courseI18n";
+import { sortCourseItemsByYearDesc } from "../lib/courseSort";
 import { useThemeMode } from "../context/ThemeContext";
 import { useLocale } from "../context/LocaleContext";
 import { sectionHeadingClass } from "../lib/sectionHeading";
@@ -27,13 +28,18 @@ export default function Courses() {
       distanceGroups: d.distance.map((g) => ({
         provider: localizeCourseProvider(g.provider, locale),
         url: g.url,
-        items: g.items.map((it) => ({
+        items: sortCourseItemsByYearDesc(g.items).map((it) => ({
           line: localizeCourseLine(it.pt, locale),
           certificateUrl: it.certificate_url?.trim() || undefined,
         })),
       })),
-      presentialItems: d.presential.map((it) => localizeCourseLine(it.pt, locale)),
-      eventItems: d.events.map((it) => localizeCourseLine(it.pt, locale)),
+      presentialItems: sortCourseItemsByYearDesc(d.presential).map((it) =>
+        localizeCourseLine(it.pt, locale),
+      ),
+      eventItems: sortCourseItemsByYearDesc(d.events).map((it) => ({
+        line: localizeCourseLine(it.pt, locale),
+        recordingUrl: it.url?.trim() || undefined,
+      })),
     };
   }, [locale]);
 
@@ -125,13 +131,26 @@ export default function Courses() {
             {t("courses_section_events")}
           </h3>
           <ul className={`${colClass} text-sm leading-relaxed ${muted}`}>
-            {eventItems.map((line, i) => (
+            {eventItems.map((it, i) => (
               <li
                 key={i}
                 className="mb-2 break-inside-avoid pl-1"
                 style={{ pageBreakInside: "avoid" }}
               >
-                {line}
+                {it.line}
+                {it.recordingUrl ? (
+                  <>
+                    {" "}
+                    <a
+                      href={it.recordingUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={linkC}
+                    >
+                      {t("courses_event_recording_link")}
+                    </a>
+                  </>
+                ) : null}
               </li>
             ))}
           </ul>

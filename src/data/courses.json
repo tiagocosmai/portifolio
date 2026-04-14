@@ -356,6 +356,14 @@
         {
           "pt": "Introdução às Competências Essenciais para a Carreira de Análise de Dados – 2022 – 3 Horas",
           "certificate_url": "https://www.linkedin.com/learning/certificates/64cf608a0c35e8c4491dc5738c1e0427de83cbd972469b0ea8c9a06e2ad785ea"
+        },
+        {
+          "pt": "Comunicação Assertiva para Gestores de Alto Desempenho – 2026 – 2 Horas",
+          "certificate_url": "https://www.linkedin.com/learning/certificates/0cca3642039d50b65bb0c93823efeb0f1fb13809c177cd4227a73bc4bc3a3807"
+        },
+        {
+          "pt": "Gestão e liderança de desenvolvedores – LinkedIn Learning – 2026 – 9 Horas",
+          "certificate_url": "https://www.linkedin.com/learning/certificates/7e01cdda5de1476664710d155bd199946598a2eca4801a0cf6805d5883ebf936"
         }
       ]
     }
@@ -446,6 +454,14 @@
     },
     {
       "pt": "Meetup – Gerando diagramas de arquitetura com IA: um exemplo com draw.io MCP Server + VS Code – 2026 – 1 Hora"
+    },
+    {
+      "pt": "Meetup – Grafana + Inteligência Artificial: monitorando o consumo de tokens ao utilizar o Microsoft Foundry – 2026 – 3 Horas",
+      "url": "https://www.youtube.com/watch?v=jbdF09YYRyA"
+    },
+    {
+      "pt": "Meetup – OWASP + API Security: dicas de segurança – Security Headers, CORS, manipulando informações sensíveis – 2026 – 3 Horas",
+      "url": "https://www.youtube.com/watch?v=51ZbIkNSHQ8"
     }
   ]
 }

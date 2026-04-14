@@ -8,6 +8,7 @@ import {
   localizeCourseProvider,
   type CoursesDataPt,
 } from "../lib/courseI18n";
+import { sortCourseItemsByYearDesc } from "../lib/courseSort";
 import type { PickedContent } from "../types/content";
 import type { Locale } from "../types/locale";
 
@@ -566,15 +567,18 @@ function blockCourses(locale: Locale): string {
   const distanceGroups = d.distance.map((g) => ({
     provider: localizeCourseProvider(g.provider, locale),
     url: g.url,
-    items: g.items.map((it) => ({
+    items: sortCourseItemsByYearDesc(g.items).map((it) => ({
       line: localizeCourseLine(it.pt, locale),
       certificateUrl: it.certificate_url?.trim() || "",
     })),
   }));
-  const presentialItems = d.presential.map((it) =>
+  const presentialItems = sortCourseItemsByYearDesc(d.presential).map((it) =>
     localizeCourseLine(it.pt, locale),
   );
-  const eventItems = d.events.map((it) => localizeCourseLine(it.pt, locale));
+  const eventItems = sortCourseItemsByYearDesc(d.events).map((it) => ({
+    line: localizeCourseLine(it.pt, locale),
+    url: it.url?.trim() || "",
+  }));
   let inner = "";
   if (distanceGroups.length) {
     for (const g of distanceGroups) {
@@ -600,7 +604,15 @@ function blockCourses(locale: Locale): string {
   }
   if (eventItems.length) {
     inner += `<div class="course-block"><h4>${esc(t(locale, "courses_section_events"))}</h4><ul>`;
-    inner += eventItems.map((i) => `<li>${esc(i)}</li>`).join("");
+    inner += eventItems
+      .map((it) => {
+        let li = `<li>${esc(it.line)}`;
+        if (it.url)
+          li += ` <a href="${esc(it.url)}" class="main-link">${esc(t(locale, "courses_event_recording_link"))}</a>`;
+        li += `</li>`;
+        return li;
+      })
+      .join("");
     inner += `</ul></div>`;
   }
   return `<div class="block">${sectionHeadHtml(t(locale, "nav_courses"))}${inner}</div>`;

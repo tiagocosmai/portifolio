@@ -40,12 +40,24 @@ const presential = (presRaw ?? "")
   .map((l) => l.trim())
   .filter(Boolean)
   .map((pt) => ({ pt }));
+
+/** Event line: `título… || https://…` → `{ pt, url? }` */
+function parseEventLine(line) {
+  const sep = " || ";
+  const i = line.lastIndexOf(sep);
+  if (i === -1) return { pt: line };
+  const pt = line.slice(0, i).trim();
+  const url = line.slice(i + sep.length).trim();
+  if (!pt || !url || !/^https?:\/\//i.test(url)) return { pt: line };
+  return { pt, url };
+}
+
 const events = (evRaw ?? "")
   .trim()
   .split("\n")
   .map((l) => l.trim())
   .filter(Boolean)
-  .map((pt) => ({ pt }));
+  .map(parseEventLine);
 
 writeFileSync(
   join(root, "src/data/courses.json"),

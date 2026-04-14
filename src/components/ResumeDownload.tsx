@@ -64,7 +64,7 @@ export default function ResumeDownload() {
 
   const [open, setOpen] = useState(false);
   const [pdfLang, setPdfLang] = useState<Locale>(siteLocale);
-  const [pdfMode, setPdfMode] = useState<ResumeMode>("ultra_compact");
+  const [pdfMode, setPdfMode] = useState<ResumeMode>("favorito");
   const [customSel, setCustomSel] = useState<CustomResumeSelection>(
     defaultCustomResumeSelection,
   );
@@ -127,7 +127,12 @@ export default function ResumeDownload() {
         id={`${panelId}-toggle`}
         aria-expanded={open}
         aria-controls={panelId}
-        onClick={() => setOpen((o) => !o)}
+        onClick={() =>
+          setOpen((o) => {
+            if (!o) setPdfMode("favorito");
+            return !o;
+          })
+        }
         className={`flex w-full cursor-pointer items-center justify-center gap-2 text-center text-base font-semibold transition-colors sm:text-lg ${titleC} ${
           isDark ? "hover:text-[#00FF41]" : "hover:text-[#14532d]"
         }`}
