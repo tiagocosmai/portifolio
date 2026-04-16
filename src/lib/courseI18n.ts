@@ -58,6 +58,16 @@ function toEn(s: string): string {
       "Meetup – Grafana and artificial intelligence: monitoring token consumption with Microsoft Foundry – 2026 – 3 hours",
     "Meetup – OWASP + API Security: dicas de segurança – Security Headers, CORS, manipulando informações sensíveis – 2026 – 3 Horas":
       "Meetup – OWASP + API security: practical tips – security headers, CORS, handling sensitive information – 2026 – 3 hours",
+    "Meetup – OWASP API Security Top 10: Um guia para a implementação de Back-Ends mais seguros! – 2026 – 3 Horas":
+      "Meetup – OWASP API Security Top 10: a guide to implementing more secure backends – 2026 – 3 hours",
+    "Master In-Demand Skills for Technology Leadership – LinkedIn Learning – 2026 – 17 Horas":
+      "Master In-Demand Skills for Technology Leadership – LinkedIn Learning – 2026 – 17 hours",
+    "Liderança com Inteligência Emocional – LinkedIn Learning – 2026 – 2 Horas":
+      "Leadership with emotional intelligence – LinkedIn Learning – 2026 – 2 hours",
+    "Advance as a Tech Leader – LinkedIn Learning – 2026 – 10 Horas":
+      "Advance as a Tech Leader – LinkedIn Learning – 2026 – 10 hours",
+    "Meetup – Event-Driven com RabbitMQ e Oragon.RabbitMQ – 2026 – 4 Horas":
+      "Meetup – Event-driven architecture with RabbitMQ and Oragon.RabbitMQ – 2026 – 4 hours",
   };
   if (exact[s]) return exact[s];
 
@@ -297,6 +307,16 @@ function toEs(s: string): string {
       "Meetup – Grafana e inteligencia artificial: monitorizando el consumo de tokens con Microsoft Foundry – 2026 – 3 horas",
     "Meetup – OWASP + API Security: dicas de segurança – Security Headers, CORS, manipulando informações sensíveis – 2026 – 3 Horas":
       "Meetup – OWASP y seguridad de APIs: consejos – cabeceras de seguridad, CORS, tratamiento de información sensible – 2026 – 3 horas",
+    "Meetup – OWASP API Security Top 10: Um guia para a implementação de Back-Ends mais seguros! – 2026 – 3 Horas":
+      "Meetup – OWASP API Security Top 10: una guía para implementar back-ends más seguros – 2026 – 3 horas",
+    "Master In-Demand Skills for Technology Leadership – LinkedIn Learning – 2026 – 17 Horas":
+      "Competencias esenciales para el liderazgo tecnológico – LinkedIn Learning – 2026 – 17 horas",
+    "Liderança com Inteligência Emocional – LinkedIn Learning – 2026 – 2 Horas":
+      "Liderazgo con inteligencia emocional – LinkedIn Learning – 2026 – 2 horas",
+    "Advance as a Tech Leader – LinkedIn Learning – 2026 – 10 Horas":
+      "Avanza como líder tecnológico – LinkedIn Learning – 2026 – 10 horas",
+    "Meetup – Event-Driven com RabbitMQ e Oragon.RabbitMQ – 2026 – 4 Horas":
+      "Meetup – Arquitectura orientada a eventos con RabbitMQ y Oragon.RabbitMQ – 2026 – 4 horas",
   };
   if (exact[s]) return exact[s];
 

@@ -364,6 +364,18 @@
         {
           "pt": "Gestão e liderança de desenvolvedores – LinkedIn Learning – 2026 – 9 Horas",
           "certificate_url": "https://www.linkedin.com/learning/certificates/7e01cdda5de1476664710d155bd199946598a2eca4801a0cf6805d5883ebf936"
+        },
+        {
+          "pt": "Master In-Demand Skills for Technology Leadership – LinkedIn Learning – 2026 – 17 Horas",
+          "certificate_url": "https://www.linkedin.com/learning/certificates/6bc168292a6cf0756110031209d2447c8c5ebff6c5ccb638a7806c6b0205b794"
+        },
+        {
+          "pt": "Liderança com Inteligência Emocional – LinkedIn Learning – 2026 – 2 Horas",
+          "certificate_url": "https://www.linkedin.com/learning/certificates/16eade087dff495552318ec767e2c588509d611b53b7883cf417ea7351010cca"
+        },
+        {
+          "pt": "Advance as a Tech Leader – LinkedIn Learning – 2026 – 10 Horas",
+          "certificate_url": "https://www.linkedin.com/learning/certificates/ff41a6ce245ebff58dd7ecc6e0c228faef7bbe2e1d8941f62281f9f04d108038"
         }
       ]
     }
@@ -450,10 +462,12 @@
       "pt": "Webinar Datadog: Seu guia para um APM proativo e unificado – 2026 – 1 Hora"
     },
     {
-      "pt": "Meetup – Desenhando com IA Arquiteturas de Soluções: um exemplo com draw.io MCP Server + VS Code + Copilot – 2026 – 1 Hora"
+      "pt": "Meetup – Desenhando com IA Arquiteturas de Soluções: um exemplo com draw.io MCP Server + VS Code + Copilot – 2026 – 1 Hora",
+      "url": "https://www.youtube.com/watch?v=-3SFDqQ8sKo"
     },
     {
-      "pt": "Meetup – Gerando diagramas de arquitetura com IA: um exemplo com draw.io MCP Server + VS Code – 2026 – 1 Hora"
+      "pt": "Meetup – Gerando diagramas de arquitetura com IA: um exemplo com draw.io MCP Server + VS Code – 2026 – 1 Hora",
+      "url": "https://www.youtube.com/watch?v=gMpkSAMOBM4"
     },
     {
       "pt": "Meetup – Grafana + Inteligência Artificial: monitorando o consumo de tokens ao utilizar o Microsoft Foundry – 2026 – 3 Horas",
@@ -462,6 +476,14 @@
     {
       "pt": "Meetup – OWASP + API Security: dicas de segurança – Security Headers, CORS, manipulando informações sensíveis – 2026 – 3 Horas",
       "url": "https://www.youtube.com/watch?v=51ZbIkNSHQ8"
+    },
+    {
+      "pt": "Meetup – OWASP API Security Top 10: Um guia para a implementação de Back-Ends mais seguros! – 2026 – 3 Horas",
+      "url": "https://www.youtube.com/watch?v=4gu8wRzjJaE"
+    },
+    {
+      "pt": "Meetup – Event-Driven com RabbitMQ e Oragon.RabbitMQ – 2026 – 4 Horas",
+      "url": "https://www.youtube.com/watch?v=d-WvquqN8j0"
     }
   ]
 }
