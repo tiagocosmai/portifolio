@@ -66,6 +66,8 @@ function toEn(s: string): string {
       "Leadership with emotional intelligence – LinkedIn Learning – 2026 – 2 hours",
     "Advance as a Tech Leader – LinkedIn Learning – 2026 – 10 Horas":
       "Advance as a Tech Leader – LinkedIn Learning – 2026 – 10 hours",
+    "IA para Líderes Organizacionais – Microsoft e LinkedIn – 2026 – 6 Horas":
+      "AI for organizational leaders – Microsoft and LinkedIn – 2026 – 6 hours",
     "Meetup – Event-Driven com RabbitMQ e Oragon.RabbitMQ – 2026 – 4 Horas":
       "Meetup – Event-driven architecture with RabbitMQ and Oragon.RabbitMQ – 2026 – 4 hours",
   };
@@ -315,6 +317,8 @@ function toEs(s: string): string {
       "Liderazgo con inteligencia emocional – LinkedIn Learning – 2026 – 2 horas",
     "Advance as a Tech Leader – LinkedIn Learning – 2026 – 10 Horas":
       "Avanza como líder tecnológico – LinkedIn Learning – 2026 – 10 horas",
+    "IA para Líderes Organizacionais – Microsoft e LinkedIn – 2026 – 6 Horas":
+      "IA para líderes organizacionales – Microsoft y LinkedIn – 2026 – 6 horas",
     "Meetup – Event-Driven com RabbitMQ e Oragon.RabbitMQ – 2026 – 4 Horas":
       "Meetup – Arquitectura orientada a eventos con RabbitMQ y Oragon.RabbitMQ – 2026 – 4 horas",
   };
