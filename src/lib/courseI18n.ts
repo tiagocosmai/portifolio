@@ -68,6 +68,14 @@ function toEn(s: string): string {
       "Advance as a Tech Leader – LinkedIn Learning – 2026 – 10 hours",
     "IA para Líderes Organizacionais – Microsoft e LinkedIn – 2026 – 6 Horas":
       "AI for organizational leaders – Microsoft and LinkedIn – 2026 – 6 hours",
+    "Fundamentos para uma Carreira em IA Generativa por Microsoft e LinkedIn – 2026 – 5 Horas":
+      "Foundations for a career in generative AI by Microsoft and LinkedIn – 2026 – 5 hours",
+    "Fundamentos de IA Generativa para Gerentes – Microsoft e LinkedIn – 2026 – 5 Horas":
+      "Generative AI fundamentals for managers – Microsoft and LinkedIn – 2026 – 5 hours",
+    "Explore a IA Generativa para Produtividade com a Microsoft e o LinkedIn – 2026 – 5 Horas":
+      "Explore generative AI for productivity with Microsoft and LinkedIn – 2026 – 5 hours",
+    "Trabalho Remoto: Colaboração, foco e produtividade – 2026 – 12 Horas":
+      "Remote work: collaboration, focus, and productivity – 2026 – 12 hours",
     "Meetup – Event-Driven com RabbitMQ e Oragon.RabbitMQ – 2026 – 4 Horas":
       "Meetup – Event-driven architecture with RabbitMQ and Oragon.RabbitMQ – 2026 – 4 hours",
   };
@@ -319,6 +327,14 @@ function toEs(s: string): string {
       "Avanza como líder tecnológico – LinkedIn Learning – 2026 – 10 horas",
     "IA para Líderes Organizacionais – Microsoft e LinkedIn – 2026 – 6 Horas":
       "IA para líderes organizacionales – Microsoft y LinkedIn – 2026 – 6 horas",
+    "Fundamentos para uma Carreira em IA Generativa por Microsoft e LinkedIn – 2026 – 5 Horas":
+      "Fundamentos para una carrera en IA generativa por Microsoft y LinkedIn – 2026 – 5 horas",
+    "Fundamentos de IA Generativa para Gerentes – Microsoft e LinkedIn – 2026 – 5 Horas":
+      "Fundamentos de IA generativa para gerentes – Microsoft y LinkedIn – 2026 – 5 horas",
+    "Explore a IA Generativa para Produtividade com a Microsoft e o LinkedIn – 2026 – 5 Horas":
+      "Explora la IA generativa para la productividad con Microsoft y LinkedIn – 2026 – 5 horas",
+    "Trabalho Remoto: Colaboração, foco e produtividade – 2026 – 12 Horas":
+      "Trabajo remoto: colaboración, enfoque y productividad – 2026 – 12 horas",
     "Meetup – Event-Driven com RabbitMQ e Oragon.RabbitMQ – 2026 – 4 Horas":
       "Meetup – Arquitectura orientada a eventos con RabbitMQ y Oragon.RabbitMQ – 2026 – 4 horas",
   };
