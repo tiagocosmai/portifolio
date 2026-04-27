@@ -1626,6 +1626,24 @@
       },
       {
         "title": {
+          "pt": "Curso Python 3 — Curso em Vídeo (material de estudo)",
+          "en": "Python 3 course — Curso em Vídeo (study repo)",
+          "es": "Curso Python 3 — Curso em Vídeo (material de estudio)"
+        },
+        "description": {
+          "pt": "Organização do acompanhamento ao curso de Python 3 do Curso em Vídeo (Gustavo Guanabara): índice pela playlist do YouTube, pastas por mundo e por capítulo alinhados ao site; README por vídeo com título, URL e descrição.",
+          "en": "Companion repo for the Curso em Vídeo Python 3 course (Gustavo Guanabara): playlist-based index, folders per module and chapter aligned with the official site; per-video README with title, URL and description.",
+          "es": "Material de seguimiento del curso Python 3 de Curso em Vídeo (Gustavo Guanabara): índice según la playlist de YouTube, carpetas por módulo y capítulo según el sitio; README por vídeo con título, URL y descripción."
+        },
+        "github_url": "https://github.com/tiagocosmai/python-course",
+        "status": {
+          "pt": "Em desenvolvimento",
+          "en": "In development",
+          "es": "En desarrollo"
+        }
+      },
+      {
+        "title": {
           "pt": "10 Things I Can't Live Without - Slideshow",
           "en": "10 Things I Can't Live Without - Slideshow",
           "es": "10 Things I Can't Live Without - Slideshow"
