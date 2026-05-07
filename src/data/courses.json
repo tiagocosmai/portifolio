@@ -390,10 +390,12 @@
           "certificate_url": "https://www.linkedin.com/learning/certificates/65b83b8d631ef953cda6afff83e8cdf95f12b5ed4f53bd1b4cf376760d91effd"
         },
         {
-          "pt": "Explore a IA Generativa para Produtividade com a Microsoft e o LinkedIn – 2026 – 5 Horas"
+          "pt": "Explore a IA Generativa para Produtividade com a Microsoft e o LinkedIn – 2026 – 5 Horas",
+          "certificate_url": "https://www.linkedin.com/learning/certificates/6d21ef1961d49bf5b1626b9f183bcda619f15dd37ad47be29fb07df9890af0d7"
         },
         {
-          "pt": "Trabalho Remoto: Colaboração, foco e produtividade – 2026 – 12 Horas"
+          "pt": "Trabalho Remoto: Colaboração, foco e produtividade – 2026 – 12 Horas",
+          "certificate_url": "https://www.linkedin.com/learning/certificates/6d441d9240a34c0e3beb7bdc1c75548231367e84a14e3a0c6b35f6e167b1e32f"
         }
       ]
     }
@@ -502,6 +504,9 @@
     {
       "pt": "Meetup – Event-Driven com RabbitMQ e Oragon.RabbitMQ – 2026 – 4 Horas",
       "url": "https://www.youtube.com/watch?v=d-WvquqN8j0"
+    },
+    {
+      "pt": "Meetup Itaú Tech - Agentes de IA no Itaú: escalando a transformação | Implementando agentes em escala: a transformação em engenharia de softwares em grandes empresas |  Arquitetando experiências para o cliente com agentes de IA  O profissional de tecnologia e o Itaú na era da IA agêntica, com Hipsters.tech - 2026 - 4 Horas"
     }
   ]
 }
