@@ -19,6 +19,7 @@ const SHOW_HISTORY_SKILLS = Object.values(
 ).some((m) => m.showSkills !== false);
 
 const LOGO_LOCAL: Record<string, string> = {
+  "afya.com.br": "afya",
   "futuresecure.ai": "futuresecure",
   "teros.com.br": "teros",
   "cvc.com.br": "cvc",

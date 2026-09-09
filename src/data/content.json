@@ -2,9 +2,9 @@
   "main": {
     "name": "Tiago Cosmai",
     "role": {
-      "pt": "Tech Lead | Senior Software Engineer",
-      "en": "Tech Lead | Senior Software Engineer",
-      "es": "Tech Lead | Senior Software Engineer"
+      "pt": "Coordenador de Desenvolvimento de TI | Tech Lead",
+      "en": "IT Development Coordinator | Tech Lead",
+      "es": "Coordinador de Desarrollo de TI | Tech Lead"
     },
     "avatar_url": "https://avatars.githubusercontent.com/u/6653377?s=400&v=4",
     "social": {
@@ -32,29 +32,29 @@
     },
     "intro_paragraphs": [
       {
-        "pt": "Sou Senior Software Engineer com mais de 20 anos de experiência em desenvolvimento de software, atuando desde a concepção de soluções até a entrega e sustentação de produtos em produção.",
-        "en": "I'm a Senior Software Engineer with over 20 years of experience in software development—from solution design through delivery and sustaining products in production.",
-        "es": "Soy Senior Software Engineer con más de 20 años de experiencia en desarrollo de software, desde el diseño de soluciones hasta la entrega y el mantenimiento en producción."
+        "pt": "Sou Coordenador de Desenvolvimento de Sistemas há mais de 6 anos, liderando equipes de engenharia e alinhando a entrega de soluções aos objetivos estratégicos do negócio. Com mais de 20 anos em Engenharia de Software, consolidei minha atuação como Senior Software Engineer, unindo expertise técnica à liderança de pessoas e iniciativas estratégicas.",
+        "en": "I've been a Systems Development Coordinator for over 6 years, leading engineering teams and aligning solution delivery with strategic business goals. Over 20 years in Software Engineering shaped my work as a Senior Software Engineer, combining deep technical expertise with people leadership and strategic initiatives.",
+        "es": "Soy Coordinador de Desarrollo de Sistemas desde hace más de 6 años, liderando equipos de ingeniería y alineando la entrega de soluciones con los objetivos estratégicos del negocio. Más de 20 años en Ingeniería de Software consolidaron mi actuación como Senior Software Engineer, uniendo expertise técnica con liderazgo de personas e iniciativas estratégicas."
       },
       {
-        "pt": "Ao longo da minha carreira, transitei entre engenharia de software, arquitetura e liderança técnica, liderando equipes multidisciplinares e desenvolvendo sistemas de alta performance, especialmente em ambientes complexos e orientados a negócio.",
-        "en": "Throughout my career I've worked across software engineering, architecture and technical leadership, leading multidisciplinary teams and building high-performance systems in complex, business-driven environments.",
-        "es": "A lo largo de mi carrera he transitado por ingeniería de software, arquitectura y liderazgo técnico, liderando equipos multidisciplinares y desarrollando sistemas de alto rendimiento en entornos complejos orientados al negocio."
+        "pt": "Ao longo da carreira, transitei entre engenharia de software, arquitetura de soluções e liderança técnica, coordenando equipes multidisciplinares e desenvolvendo sistemas de alta performance para ambientes complexos e orientados ao negócio.",
+        "en": "Throughout my career I've moved across software engineering, solution architecture and technical leadership—coordinating multidisciplinary teams and building high-performance systems for complex, business-driven environments.",
+        "es": "A lo largo de la carrera, he transitado entre ingeniería de software, arquitectura de soluciones y liderazgo técnico, coordinando equipos multidisciplinares y desarrollando sistemas de alto rendimiento para entornos complejos orientados al negocio."
       },
       {
-        "pt": "Tenho forte atuação com Node.js, React, arquitetura de sistemas distribuídos e integração com plataformas de grande escala, além de experiência sólida em produtos de precificação, e-commerce, pagamentos e sistemas corporativos.",
-        "en": "I have strong experience with Node.js, React, distributed systems architecture and integration with large-scale platforms, plus solid background in pricing products, e-commerce, payments and enterprise systems.",
-        "es": "Fuerte experiencia con Node.js, React, arquitectura de sistemas distribuidos e integración con plataformas de gran escala, además de sólida trayectoria en productos de precios, e-commerce, pagos y sistemas corporativos."
+        "pt": "Possuo sólida experiência com Node.js, Python, Java, C#, React, arquiteturas distribuídas, microsserviços, computação em nuvem e integração com plataformas de grande escala, além de atuação em precificação, e-commerce, meios de pagamento, inteligência artificial e sistemas corporativos.",
+        "en": "I bring solid experience with Node.js, Python, Java, C#, React, distributed architectures, microservices, cloud computing and large-scale platform integration, plus work in pricing, e-commerce, payments, artificial intelligence and enterprise systems.",
+        "es": "Cuento con sólida experiencia en Node.js, Python, Java, C#, React, arquitecturas distribuidas, microservicios, computación en la nube e integración con plataformas de gran escala, además de trayectoria en pricing, e-commerce, medios de pago, inteligencia artificial y sistemas corporativos."
       },
       {
-        "pt": "Valorizo qualidade de código, boas práticas, colaboração entre times e alinhamento técnico com objetivos de negócio. Acredito em tecnologia como meio para gerar impacto real, escalável e sustentável.",
-        "en": "I value code quality, good practices, cross-team collaboration and technical alignment with business goals. I believe technology is a means to deliver real, scalable and sustainable impact.",
-        "es": "Valoro calidad de código, buenas prácticas, colaboración entre equipos y alineación técnica con los objetivos de negocio. Creo en la tecnología como medio para generar impacto real, escalable y sostenible."
+        "pt": "Tenho como princípios a qualidade de software, as boas práticas de engenharia, a arquitetura escalável, a melhoria contínua, a colaboração entre equipes e o desenvolvimento de pessoas. Acredito que a tecnologia deve gerar valor para o negócio por meio de soluções escaláveis, sustentáveis e de alto impacto.",
+        "en": "My principles are software quality, sound engineering practices, scalable architecture, continuous improvement, cross-team collaboration and people development. I believe technology should create business value through scalable, sustainable, high-impact solutions.",
+        "es": "Mis principios son la calidad de software, las buenas prácticas de ingeniería, la arquitectura escalable, la mejora continua, la colaboración entre equipos y el desarrollo de personas. Creo que la tecnología debe generar valor para el negocio mediante soluciones escalables, sostenibles y de alto impacto."
       },
       {
-        "pt": "Atualmente atuo como Senior Software Engineer na Future Secure AI, mantendo uma postura de aprendizado contínuo e evolução profissional.",
-        "en": "I currently work as a Senior Software Engineer at Future Secure AI, committed to continuous learning and professional growth.",
-        "es": "Actualmente trabajo como Senior Software Engineer en Future Secure AI, con una actitud de aprendizaje continuo y evolución profesional."
+        "pt": "Atualmente, atuo na Afya como Coordenador de Desenvolvimento de TI | Tech Lead, conciliando a liderança de equipes com uma atuação próxima à engenharia. Contribuo para decisões técnicas, arquitetura e evolução dos produtos, em parceria com Produto, Negócio e Design na Missão de Prescrição, na vertical de Growth e Canais.",
+        "en": "I currently work at Afya as IT Development Coordinator | Tech Lead, balancing team leadership with hands-on engineering. I contribute to technical decisions, architecture and product evolution, partnering with Product, Business and Design on the Prescription Mission within the Growth and Channels vertical.",
+        "es": "Actualmente trabajo en Afya como Coordinador de Desarrollo de TI | Tech Lead, conciliando el liderazgo de equipos con una actuación cercana a la ingeniería. Contribuyo a decisiones técnicas, arquitectura y evolución de productos, en alianza con Producto, Negocio y Diseño en la Misión de Prescripción, dentro de la vertical de Growth y Canales."
       }
     ]
   },
@@ -441,6 +441,29 @@
     },
     "entries": [
       {
+        "logo_domain": "unigranrio.edu.br",
+        "date": {
+          "pt": "set 2026 – o momento",
+          "en": "Sep 2026 – Present",
+          "es": "sep 2026 – actualidad"
+        },
+        "location": {
+          "pt": "Universidade Unigranrio | Afya",
+          "en": "Universidade Unigranrio | Afya",
+          "es": "Universidade Unigranrio | Afya"
+        },
+        "title": {
+          "pt": "Especialização em Gestão de Projetos (Project Management)",
+          "en": "Specialization in Project Management",
+          "es": "Especialización en Gestión de Proyectos (Project Management)"
+        },
+        "description": {
+          "pt": "Especialização em Gestão de Projetos, com abordagem prática e orientada às melhores práticas, ferramentas e técnicas para o planejamento, execução, monitoramento e controle de projetos. A formação contempla fundamentos de gerenciamento de projetos, ferramentas de gestão, comunicação e stakeholders, cronogramas, recursos, custos, riscos, qualidade, indicadores de desempenho e desenvolvimento de projeto de intervenção. Em andamento, a especialização complementa minha experiência em liderança técnica, coordenação de equipes e condução de iniciativas no contexto de tecnologia.",
+          "en": "Specialization in Project Management with a practical approach oriented to best practices, tools and techniques for planning, executing, monitoring and controlling projects. The program covers project management fundamentals, management tools, communication and stakeholders, schedules, resources, costs, risks, quality, performance indicators and an intervention project. In progress, this specialization complements my experience in technical leadership, team coordination and driving initiatives in technology contexts.",
+          "es": "Especialización en Gestión de Proyectos, con enfoque práctico orientado a las mejores prácticas, herramientas y técnicas para la planificación, ejecución, monitoreo y control de proyectos. La formación contempla fundamentos de gestión de proyectos, herramientas de gestión, comunicación y stakeholders, cronogramas, recursos, costos, riesgos, calidad, indicadores de desempeño y desarrollo de un proyecto de intervención. En curso, la especialización complementa mi experiencia en liderazgo técnico, coordinación de equipos y conducción de iniciativas en el contexto de tecnología."
+        }
+      },
+      {
         "logo_domain": "faculdadesalvadorarena.org.br",
         "date": {
           "pt": "2005 – 2008",
@@ -565,11 +588,127 @@
     },
     "entries": [
       {
+        "logo_domain": "afya.com.br",
+        "date": {
+          "pt": "mai 2026 – o momento",
+          "en": "May 2026 – Present",
+          "es": "may 2026 – actualidad"
+        },
+        "company": {
+          "pt": "Afya",
+          "en": "Afya",
+          "es": "Afya"
+        },
+        "location": {
+          "pt": "São Paulo/SP · Híbrido",
+          "en": "São Paulo/SP · Hybrid",
+          "es": "São Paulo/SP · Híbrido"
+        },
+        "role": {
+          "pt": "Coordenador de Desenvolvimento de TI | Tech Lead",
+          "en": "IT Development Coordinator | Tech Lead",
+          "es": "Coordinador de Desarrollo de TI | Tech Lead"
+        },
+        "hard_skills": {
+          "pt": [
+            "Node.js",
+            "Python",
+            "React",
+            "Microsserviços",
+            "Computação em nuvem",
+            "Arquitetura distribuída",
+            "Observabilidade",
+            "Automação"
+          ],
+          "en": [
+            "Node.js",
+            "Python",
+            "React",
+            "Microservices",
+            "Cloud computing",
+            "Distributed architecture",
+            "Observability",
+            "Automation"
+          ],
+          "es": [
+            "Node.js",
+            "Python",
+            "React",
+            "Microservicios",
+            "Computación en la nube",
+            "Arquitectura distribuida",
+            "Observabilidad",
+            "Automatización"
+          ]
+        },
+        "soft_skills": {
+          "pt": [
+            "Liderança de equipes",
+            "Mentoria",
+            "Tríade de produto",
+            "Alinhamento estratégico",
+            "Melhoria contínua",
+            "Cultura de colaboração"
+          ],
+          "en": [
+            "Team leadership",
+            "Mentoring",
+            "Product triad",
+            "Strategic alignment",
+            "Continuous improvement",
+            "Collaboration culture"
+          ],
+          "es": [
+            "Liderazgo de equipos",
+            "Mentoría",
+            "Tríada de producto",
+            "Alineación estratégica",
+            "Mejora continua",
+            "Cultura de colaboración"
+          ]
+        },
+        "description": {
+          "pt": [
+            "Como Coordenador de Desenvolvimento de Sistemas, lidero equipes de engenharia responsáveis pela evolução de produtos estratégicos da vertical de Growth e Canais, promovendo excelência técnica, desenvolvimento de pessoas e alinhamento entre tecnologia e objetivos de negócio.",
+            "Liderança de equipes multidisciplinares de Engenharia de Software, promovendo um ambiente colaborativo, de alta performance e focado em melhoria contínua.",
+            "Atuação como líder técnico, apoiando decisões de arquitetura, definição de padrões de desenvolvimento, revisão de soluções e evolução tecnológica dos produtos.",
+            "Formação da tríade de produto, trabalhando em parceria com as áreas de Produto, Negócio e Design na definição de estratégia, priorização e entrega de soluções para a Missão de Prescrição.",
+            "Coordenação do ciclo de desenvolvimento de software, desde o discovery e planejamento até a entrega, operação e evolução contínua das aplicações.",
+            "Desenvolvimento e evolução de sistemas distribuídos e aplicações escaláveis utilizando tecnologias como Node.js, Python, React, microsserviços e computação em nuvem.",
+            "Fomento às boas práticas de engenharia, qualidade de software, observabilidade, automação, revisão de código e arquitetura escalável.",
+            "Mentoria e desenvolvimento de profissionais, apoiando o crescimento técnico e comportamental da equipe e fortalecendo uma cultura de colaboração, autonomia e aprendizado contínuo.",
+            "Atuação estratégica na conexão entre Engenharia, Produto e Negócio, garantindo que as soluções entregues gerem valor para os usuários e estejam alinhadas aos objetivos da empresa."
+          ],
+          "en": [
+            "As Systems Development Coordinator, I lead engineering teams responsible for evolving strategic products in the Growth and Channels vertical—driving technical excellence, people development and alignment between technology and business goals.",
+            "Leadership of multidisciplinary Software Engineering teams, fostering a collaborative, high-performance environment focused on continuous improvement.",
+            "Hands-on technical leadership supporting architecture decisions, development standards, solution reviews and product technology evolution.",
+            "Building the product triad in partnership with Product, Business and Design on strategy, prioritization and delivery for the Prescription Mission.",
+            "Coordination of the software development lifecycle—from discovery and planning through delivery, operations and continuous application evolution.",
+            "Development and evolution of distributed systems and scalable applications using Node.js, Python, React, microservices and cloud computing.",
+            "Promotion of engineering best practices, software quality, observability, automation, code review and scalable architecture.",
+            "Mentoring and developing professionals—supporting technical and behavioral growth and strengthening a culture of collaboration, autonomy and continuous learning.",
+            "Strategic bridge between Engineering, Product and Business so delivered solutions create user value and stay aligned with company objectives."
+          ],
+          "es": [
+            "Como Coordinador de Desarrollo de Sistemas, lidero equipos de ingeniería responsables de la evolución de productos estratégicos de la vertical de Growth y Canales, impulsando excelencia técnica, desarrollo de personas y alineación entre tecnología y objetivos de negocio.",
+            "Liderazgo de equipos multidisciplinares de Ingeniería de Software, promoviendo un entorno colaborativo, de alto rendimiento y enfocado en la mejora continua.",
+            "Actuación como líder técnico, apoyando decisiones de arquitectura, definición de estándares de desarrollo, revisión de soluciones y evolución tecnológica de los productos.",
+            "Formación de la tríada de producto, en alianza con Producto, Negocio y Diseño en la definición de estrategia, priorización y entrega de soluciones para la Misión de Prescripción.",
+            "Coordinación del ciclo de desarrollo de software, desde discovery y planificación hasta la entrega, operación y evolución continua de las aplicaciones.",
+            "Desarrollo y evolución de sistemas distribuidos y aplicaciones escalables con Node.js, Python, React, microservicios y computación en la nube.",
+            "Fomento de buenas prácticas de ingeniería, calidad de software, observabilidad, automatización, revisión de código y arquitectura escalable.",
+            "Mentoría y desarrollo de profesionales, apoyando el crecimiento técnico y conductual del equipo y fortaleciendo una cultura de colaboración, autonomía y aprendizaje continuo.",
+            "Actuación estratégica en la conexión entre Ingeniería, Producto y Negocio, asegurando que las soluciones generen valor para los usuarios y estén alineadas a los objetivos de la empresa."
+          ]
+        }
+      },
+      {
         "logo_domain": "futuresecure.ai",
         "date": {
-          "pt": "ago 2025 – o momento",
-          "en": "Aug 2025 – Present",
-          "es": "ago 2025 – actualidad"
+          "pt": "ago 2025 – abr 2026",
+          "en": "Aug 2025 – Apr 2026",
+          "es": "ago 2025 – abr 2026"
         },
         "company": {
           "pt": "Future Secure AI",
@@ -634,19 +773,19 @@
         },
         "description": {
           "pt": [
-            "Atuo como Senior Software Engineer, participando ativamente do desenvolvimento e evolução de soluções baseadas em Node.js e React, com foco em qualidade, escalabilidade e boas práticas de engenharia.",
-            "Minha atuação envolve desde a análise técnica e definição de soluções até a implementação e sustentação dos sistemas, colaborando com diferentes áreas para garantir entregas alinhadas às necessidades do negócio e aos padrões de engenharia da empresa.",
-            "Tenho contribuído também com a adoção de práticas modernas, melhoria contínua do código e uso estratégico de IA aplicada ao desenvolvimento, buscando eficiência, robustez e evolução constante dos produtos."
+            "Atuei como Senior Software Engineer no desenvolvimento e evolução de soluções baseadas em Node.js e React, com foco em qualidade, escalabilidade e boas práticas de engenharia.",
+            "Minha atuação abrangeu desde a análise técnica e definição de soluções até a implementação e sustentação dos sistemas, colaborando com diferentes áreas para garantir entregas alinhadas às necessidades do negócio e aos padrões de engenharia da empresa.",
+            "Contribuí também com a adoção de práticas modernas, melhoria contínua do código e uso estratégico de IA aplicada ao desenvolvimento, buscando eficiência, robustez e evolução constante dos produtos."
           ],
           "en": [
-            "I work as Senior Software Engineer, actively building and evolving Node.js and React solutions with a focus on quality, scalability and engineering best practices.",
-            "My work spans technical analysis and solution design through implementation and maintenance, collaborating across teams so deliveries align with business needs and company engineering standards.",
-            "I also help adopt modern practices, continuous code improvement and strategic use of AI in development for efficiency, robustness and steady product evolution."
+            "I worked as Senior Software Engineer building and evolving Node.js and React solutions with a focus on quality, scalability and engineering best practices.",
+            "My work spanned technical analysis and solution design through implementation and maintenance, collaborating across teams so deliveries aligned with business needs and company engineering standards.",
+            "I also helped adopt modern practices, continuous code improvement and strategic use of AI in development for efficiency, robustness and steady product evolution."
           ],
           "es": [
-            "Actúo como Senior Software Engineer en el desarrollo y evolución de soluciones con Node.js y React, con foco en calidad, escalabilidad y buenas prácticas.",
-            "Participo desde el análisis técnico y diseño de soluciones hasta la implementación y mantenimiento, colaborando con distintas áreas para alinear entregas al negocio y a los estándares de ingeniería.",
-            "Contribuyo a prácticas modernas, mejora continua del código y uso estratégico de IA en el desarrollo para eficiencia y evolución de los productos."
+            "Actué como Senior Software Engineer en el desarrollo y evolución de soluciones con Node.js y React, con foco en calidad, escalabilidad y buenas prácticas.",
+            "Participé desde el análisis técnico y diseño de soluciones hasta la implementación y mantenimiento, colaborando con distintas áreas para alinear entregas al negocio y a los estándares de ingeniería.",
+            "Contribuí a prácticas modernas, mejora continua del código y uso estratégico de IA en el desarrollo para eficiencia y evolución de los productos."
           ]
         }
       },
