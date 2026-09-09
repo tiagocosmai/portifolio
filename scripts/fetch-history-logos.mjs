@@ -11,6 +11,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const outDir = join(__dirname, "..", "public", "history-logos");
 
 const domains = [
+  ["afya", "afya.com.br"],
   ["futuresecure", "futuresecure.ai"],
   ["teros", "teros.com.br"],
   ["cvc", "cvc.com.br"],

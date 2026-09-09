@@ -6,6 +6,7 @@ Coloque aqui **ou** em `project-logos/` ficheiros **PNG** com estes nomes:
 
 | Ficheiro        | Empresa        |
 |-----------------|----------------|
+| `afya.png`      | Afya            |
 | `futuresecure.png` | Future Secure AI |
 | `teros.png`     | Teros          |
 | `cvc.png`       | CVC Corp       |

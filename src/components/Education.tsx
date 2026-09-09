@@ -12,6 +12,7 @@ import { sectionHeadingClass } from "../lib/sectionHeading";
 import { SectionTitleIcon } from "../lib/sectionIcons";
 
 const EDU_LOGO_LOCAL: Record<string, string> = {
+  "unigranrio.edu.br": "unigranrio",
   "faculdadesalvadorarena.org.br": "salvadorarena",
   "educacao.sp.gov.br": "etec",
   "sp.senai.br": "senai_sp",
