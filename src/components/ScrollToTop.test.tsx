@@ -34,4 +34,17 @@ describe("ScrollToTop", () => {
       behavior: "smooth",
     });
   });
+
+  it("scrolls the embedded blog to the top without leaving it", () => {
+    const onBlogScrollTop = vi.fn();
+    const scrollTo = vi.fn();
+    window.scrollTo = scrollTo;
+    renderWithProviders(
+      <ScrollToTop blogActive blogScrollY={500} onBlogScrollTop={onBlogScrollTop} docked />,
+      { mode: "dark", locale: "en" },
+    );
+    fireEvent.click(screen.getByRole("button", { name: /back to top/i }));
+    expect(onBlogScrollTop).toHaveBeenCalled();
+    expect(scrollTo).not.toHaveBeenCalled();
+  });
 });

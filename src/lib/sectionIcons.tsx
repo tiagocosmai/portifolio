@@ -10,6 +10,7 @@ import {
   Languages,
   Layers,
   Mail,
+  Newspaper,
 } from "lucide-react";
 
 /** Ícones alinhados ao menu / títulos de secção */
@@ -25,6 +26,7 @@ export const SECTION_ICONS = {
   hobbies: Heart,
   resume: FileText,
   contact: Mail,
+  blog: Newspaper,
 } as const;
 
 export type SectionIconKey = keyof typeof SECTION_ICONS;
