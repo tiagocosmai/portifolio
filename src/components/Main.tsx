@@ -48,7 +48,10 @@ export default function Main() {
 
   return (
     <div className="mt-16 flex w-full flex-col items-center">
-      <section className="relative flex min-h-[calc(100dvh-4rem)] w-full flex-col items-center justify-center overflow-hidden px-[5%] py-12 md:min-h-[min(100dvh,960px)] md:py-16">
+      <section
+        id="primary-content"
+        className="relative flex min-h-[calc(100dvh-4rem)] w-full flex-col items-center justify-center overflow-hidden px-[5%] py-12 md:min-h-[min(100dvh,960px)] md:py-16"
+      >
         <div
           className="absolute inset-0 z-0 bg-cover bg-fixed bg-center bg-no-repeat"
           style={{

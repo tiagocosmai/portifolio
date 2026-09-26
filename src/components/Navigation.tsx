@@ -28,13 +28,27 @@ const NAV_ENTRIES: { id: string; key: string; icon: SectionIconKey }[] = [
   { id: "contact", key: "nav_contact", icon: "contact" },
 ];
 
-const visibleNav = SHOW_CONTACT
-  ? NAV_ENTRIES
-  : NAV_ENTRIES.filter((e) => e.id !== "contact");
+type NavItem = {
+  id: string;
+  key: string;
+  icon: SectionIconKey;
+  action: "section" | "blog";
+};
+
+const visibleNav: NavItem[] = [
+  ...(SHOW_CONTACT
+    ? NAV_ENTRIES
+    : NAV_ENTRIES.filter((e) => e.id !== "contact")
+  ).map((entry) => ({ ...entry, action: "section" as const })),
+  { id: "blog", key: "nav_blog", icon: "blog", action: "blog" },
+];
 
 type Props = {
   mode: ThemeMode;
   modeChange: () => void;
+  blogActive?: boolean;
+  onOpenBlog?: () => void;
+  onOpenSection?: (id: string) => void;
 };
 
 const SITE_BRAND = "Portifólio - Tiago Cosmai";
@@ -165,7 +179,13 @@ function LanguageMenu({
   );
 }
 
-export default function Navigation({ mode, modeChange }: Props) {
+export default function Navigation({
+  mode,
+  modeChange,
+  blogActive = false,
+  onOpenBlog,
+  onOpenSection,
+}: Props) {
   const { locale, setLocale, t } = useLocale();
   const isDark = mode === "dark";
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -191,10 +211,18 @@ export default function Navigation({ mode, modeChange }: Props) {
     return () => document.removeEventListener("mousedown", close);
   }, [navDropdownOpen]);
 
-  const scrollToSection = (section: string) => {
-    document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
+  const activate = (entry: NavItem) => {
     setMobileOpen(false);
     setNavDropdownOpen(false);
+    if (entry.action === "blog") {
+      onOpenBlog?.();
+      return;
+    }
+    if (onOpenSection) {
+      onOpenSection(entry.id);
+      return;
+    }
+    document.getElementById(entry.id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   const linkClass = isDark
@@ -295,14 +323,22 @@ export default function Navigation({ mode, modeChange }: Props) {
                 role="listbox"
                 className={`absolute right-0 z-[60] mt-1 max-h-[70vh] min-w-[12rem] overflow-auto rounded-lg border py-1 shadow-lg ${navDropdownList}`}
               >
-                {visibleNav.map(({ id, key, icon }) => {
+                {visibleNav.map((entry) => {
+                  const { id, key, icon, action } = entry;
                   const NavIcon = SECTION_ICONS[icon];
                   return (
                     <li key={id} role="option">
                       <button
                         type="button"
-                        onClick={() => scrollToSection(id)}
-                        className={`flex w-full items-center gap-2 px-3 py-2.5 text-left text-sm ${isDark ? "text-white" : "text-[#0d1116]"} ${navDropdownItemHover}`}
+                        onClick={() => activate(entry)}
+                        aria-current={blogActive && action === "blog" ? "page" : undefined}
+                        className={`flex w-full items-center gap-2 px-3 py-2.5 text-left text-sm ${isDark ? "text-white" : "text-[#0d1116]"} ${navDropdownItemHover} ${
+                          blogActive && action === "blog"
+                            ? isDark
+                              ? "text-[#00FF41]"
+                              : "text-[#14532d]"
+                            : ""
+                        }`}
                       >
                         <NavIcon
                           className={`h-4 w-4 shrink-0 ${isDark ? "text-[#00FF41]" : "text-[#14532d]"}`}
@@ -320,14 +356,22 @@ export default function Navigation({ mode, modeChange }: Props) {
 
           {/* Lista horizontal de links: visível apenas em 2xl e acima */}
           <nav className="hidden shrink-0 items-center justify-end gap-0.5 2xl:flex md:gap-1">
-            {visibleNav.map(({ id, key, icon }) => {
+            {visibleNav.map((entry) => {
+              const { id, key, icon, action } = entry;
               const NavIcon = SECTION_ICONS[icon];
               return (
                 <button
                   key={id}
                   type="button"
-                  onClick={() => scrollToSection(id)}
-                  className={`inline-flex items-center gap-1 rounded-lg px-1.5 py-2 text-[0.85rem] font-normal capitalize transition-colors md:gap-1.5 md:px-2.5 md:text-[0.95rem] lg:text-[1.02rem] ${linkClass}`}
+                  onClick={() => activate(entry)}
+                  aria-current={blogActive && action === "blog" ? "page" : undefined}
+                  className={`inline-flex items-center gap-1 rounded-lg px-1.5 py-2 text-[0.85rem] font-normal capitalize transition-colors md:gap-1.5 md:px-2.5 md:text-[0.95rem] lg:text-[1.02rem] ${linkClass} ${
+                    blogActive && action === "blog"
+                      ? isDark
+                        ? "!text-[#00FF41]"
+                        : "!text-[#14532d]"
+                      : ""
+                  }`}
                 >
                   <NavIcon
                     className={`h-4 w-4 shrink-0 md:h-[1.05rem] md:w-[1.05rem] ${
@@ -367,14 +411,20 @@ export default function Navigation({ mode, modeChange }: Props) {
               />
             </div>
             <ul className="flex flex-col p-2">
-              {visibleNav.map(({ id, key, icon }) => {
+              {visibleNav.map((entry) => {
+                const { id, key, icon, action } = entry;
                 const NavIcon = SECTION_ICONS[icon];
                 return (
                   <li key={id}>
                     <button
                       type="button"
-                      onClick={() => scrollToSection(id)}
-                      className="flex w-full items-center justify-center gap-2 rounded-lg py-3 text-[#0d1116] transition-colors hover:bg-black/5"
+                      onClick={() => activate(entry)}
+                      aria-current={blogActive && action === "blog" ? "page" : undefined}
+                      className={`flex w-full items-center justify-center gap-2 rounded-lg py-3 transition-colors hover:bg-black/5 ${
+                        blogActive && action === "blog"
+                          ? "text-[#14532d]"
+                          : "text-[#0d1116]"
+                      }`}
                     >
                       <NavIcon
                         className="h-5 w-5 shrink-0 text-[#166534]"

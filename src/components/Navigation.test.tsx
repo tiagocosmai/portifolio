@@ -98,6 +98,30 @@ describe("Navigation", () => {
     fireEvent.mouseDown(document.body);
   });
 
+  it("opens the blog in place and sends other links back to a section", () => {
+    const onOpenBlog = vi.fn();
+    const onOpenSection = vi.fn();
+    renderWithProviders(
+      <Navigation
+        mode="dark"
+        modeChange={vi.fn()}
+        blogActive
+        onOpenBlog={onOpenBlog}
+        onOpenSection={onOpenSection}
+      />,
+      { locale: "en", mode: "dark" },
+    );
+    fireEvent.click(screen.getAllByRole("button", { name: /^blog$/i }).at(-1)!);
+    expect(onOpenBlog).toHaveBeenCalled();
+    expect(
+      screen.getAllByRole("button", { name: /^blog$/i }).at(-1),
+    ).toHaveAttribute("aria-current", "page");
+    fireEvent.click(
+      screen.getAllByRole("button", { name: /expertise/i }).at(-1)!,
+    );
+    expect(onOpenSection).toHaveBeenCalledWith("expertise");
+  });
+
   it("mobile menu open and close", () => {
     Object.defineProperty(window, "innerWidth", {
       writable: true,
