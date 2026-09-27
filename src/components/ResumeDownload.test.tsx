@@ -14,6 +14,26 @@ describe("ResumeDownload", () => {
     generateResumePdf.mockReset();
   });
 
+  it("offers the AI reading PDF and a link to the HTML page", async () => {
+    generateResumePdf.mockResolvedValue(undefined);
+    renderWithProviders(<ResumeDownload />, { locale: "en" });
+    fireEvent.click(
+      screen.getByRole("button", { name: /PDF options & generation/i }),
+    );
+    expect(
+      screen.getByRole("link", { name: /HTML version for AI reading/i }),
+    ).toHaveAttribute("href", "/curriculo/en");
+    fireEvent.click(screen.getByRole("button", { name: /AI reading/i }));
+    fireEvent.click(
+      screen.getByRole("button", { name: /open print preview/i }),
+    );
+    await waitFor(() => expect(generateResumePdf).toHaveBeenCalled());
+    const html = generateResumePdf.mock.calls[0][0] as string;
+    const filename = generateResumePdf.mock.calls[0][1] as string;
+    expect(html).toContain('data-resume-format="ai-reading"');
+    expect(filename).toBe("Tiago_Cosmai_CV_en_ai.pdf");
+  });
+
   it("shows error alert when generateResumePdf rejects", async () => {
     generateResumePdf.mockRejectedValueOnce(new Error("x"));
     renderWithProviders(<ResumeDownload />, { locale: "en" });

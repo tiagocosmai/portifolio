@@ -17,6 +17,7 @@ describe("buildResumeHtml", () => {
     "favorito",
     "complete",
     "custom",
+    "ai",
   ];
 
   it.each(modes)("produces valid HTML for mode %s", (mode) => {

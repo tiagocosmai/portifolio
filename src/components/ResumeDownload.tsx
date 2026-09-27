@@ -19,6 +19,7 @@ import {
   type CustomResumeSelection,
   type CustomResumeSectionKey,
 } from "../resume/buildResumeHtml";
+import { curriculoHref } from "../resume/curriculoRoutes";
 import { generateResumePdf } from "../resume/generateResumePdf";
 
 const LOCALES: { value: Locale; label: string }[] = [
@@ -54,6 +55,7 @@ const RESUME_MODES: {
   { value: "favorito", titleKey: "resume_mode_favorito", hintKey: "resume_mode_favorito_hint" },
   { value: "complete", titleKey: "resume_mode_complete", hintKey: "resume_mode_complete_hint" },
   { value: "custom", titleKey: "resume_mode_custom", hintKey: "resume_mode_custom_hint" },
+  { value: "ai", titleKey: "resume_mode_ai", hintKey: "resume_mode_ai_hint" },
 ];
 
 export default function ResumeDownload() {
@@ -339,6 +341,15 @@ export default function ResumeDownload() {
               {err}
             </p>
           ) : null}
+
+          <p className="text-center text-sm">
+            <a
+              href={curriculoHref(pdfLang)}
+              className={isDark ? "text-[#00FF41] underline" : "text-[#166534] underline"}
+            >
+              {t("resume_ai_open_html")}
+            </a>
+          </p>
 
           <p className={`text-center text-xs ${labelC}`}>{t("resume_print_hint")}</p>
 
