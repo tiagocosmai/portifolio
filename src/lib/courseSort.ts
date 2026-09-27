@@ -11,14 +11,17 @@ export function extractLatestYearFromCoursePt(pt: string): number {
   return max;
 }
 
-/** Newest first; ties broken by Portuguese string order of `pt`. */
-export function sortCourseItemsByYearDesc<T extends { pt: string }>(
-  items: readonly T[],
-): T[] {
+/** Newest first. Talks given as speaker come before other items of the same year. */
+export function sortCourseItemsByYearDesc<
+  T extends { pt: string; role?: string },
+>(items: readonly T[]): T[] {
   return [...items].sort((a, b) => {
     const ya = extractLatestYearFromCoursePt(a.pt);
     const yb = extractLatestYearFromCoursePt(b.pt);
     if (yb !== ya) return yb - ya;
+    const speakerA = a.role === "speaker" ? 0 : 1;
+    const speakerB = b.role === "speaker" ? 0 : 1;
+    if (speakerA !== speakerB) return speakerA - speakerB;
     return a.pt.localeCompare(b.pt, "pt");
   });
 }

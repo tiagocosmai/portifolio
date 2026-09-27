@@ -31,6 +31,17 @@ describe("localizeCourseProvider", () => {
 describe("localizeCourseLine — exhaustive courses.json", () => {
   const data = coursesData as CoursesDataPt;
 
+  it("translates the TDC speaker talk", () => {
+    const line =
+      "O Agente Secreto: Papéis, Responsabilidades e IA nas Organizações – The Developer's Conference – 25/10/2026";
+    expect(localizeCourseLine(line, "en")).toContain(
+      "The Secret Agent: Roles, Responsibilities, and AI in Organizations",
+    );
+    expect(localizeCourseLine(line, "es")).toContain(
+      "El agente secreto: papeles, responsabilidades e IA en las organizaciones",
+    );
+  });
+
   it("translates every distance course line to en and es", () => {
     for (const g of data.distance) {
       for (const it of g.items) {

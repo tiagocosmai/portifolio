@@ -45,6 +45,8 @@ function toEn(s: string): string {
       "Assertive communication for high-performing managers – 2026 – 2 hours",
     "Webinar Datadog: Seu guia para um APM proativo e unificado – 2026 – 1 Hora":
       "Datadog webinar: your guide to proactive, unified APM – 2026 – 1 hour",
+    "O Agente Secreto: Papéis, Responsabilidades e IA nas Organizações – The Developer's Conference – 25/10/2026":
+      "The Secret Agent: Roles, Responsibilities, and AI in Organizations – The Developer's Conference – October 25, 2026",
     "Meetup – Desenhando com IA Arquiteturas de Soluções: um exemplo com draw.io MCP Server + VS Code + Copilot – 2026 – 1 Hora":
       "Meetup – Designing solution architectures with AI: an example with draw.io MCP Server + VS Code + Copilot – 2026 – 1 hour",
     "Meetup – Gerando diagramas de arquitetura com IA: um exemplo com draw.io MCP Server + VS Code – 2026 – 1 Hora":
@@ -304,6 +306,8 @@ function toEs(s: string): string {
       "Comunicación asertiva para gestores de alto rendimiento – 2026 – 2 horas",
     "Webinar Datadog: Seu guia para um APM proativo e unificado – 2026 – 1 Hora":
       "Webinar Datadog: tu guía para un APM proactivo y unificado – 2026 – 1 hora",
+    "O Agente Secreto: Papéis, Responsabilidades e IA nas Organizações – The Developer's Conference – 25/10/2026":
+      "El agente secreto: papeles, responsabilidades e IA en las organizaciones – The Developer's Conference – 25 de octubre de 2026",
     "Meetup – Desenhando com IA Arquiteturas de Soluções: um exemplo com draw.io MCP Server + VS Code + Copilot – 2026 – 1 Hora":
       "Meetup – Diseñando arquitecturas de soluciones con IA: un ejemplo con draw.io MCP Server + VS Code + Copilot – 2026 – 1 hora",
     "Meetup – Gerando diagramas de arquitetura com IA: um exemplo com draw.io MCP Server + VS Code – 2026 – 1 Hora":
@@ -535,8 +539,10 @@ export function localizeCourseLine(pt: string, locale: Locale): string {
 export type CourseItemPt = {
   pt: string;
   certificate_url?: string;
-  /** Recording / external link (e.g. YouTube) for events */
+  /** Recording / external link (e.g. YouTube) for events, or the event page for a talk */
   url?: string;
+  /** speaker = own talk, shown ahead of other events in the same year */
+  role?: "speaker";
 };
 export type CourseGroupPt = {
   provider: string;

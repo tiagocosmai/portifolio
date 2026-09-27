@@ -50,9 +50,16 @@ describe("section components (smoke + headings)", () => {
     expect(screen.getByRole("heading", { level: 2 })).toBeInTheDocument();
   });
 
-  it("renders Courses", () => {
+  it("renders Courses and highlights a talk given as speaker", () => {
     renderWithProviders(<Courses />, { locale: "pt" });
     expect(screen.getByRole("heading", { level: 2 })).toBeInTheDocument();
+    expect(screen.getByText("Palestrante")).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "Página do evento ↗" }),
+    ).toHaveAttribute(
+      "href",
+      "https://thedevconf.com/tdc/2026/sao-paulo/community-lounge?dia=25",
+    );
     renderWithProviders(<Courses />, { locale: "en" });
     renderWithProviders(<Courses />, { locale: "es" });
   });
