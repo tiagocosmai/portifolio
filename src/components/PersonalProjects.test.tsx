@@ -25,6 +25,13 @@ describe("PersonalProjects", () => {
     expect(
       screen.getByRole("heading", { level: 2, name: /personal projects/i }),
     ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { level: 3, name: "Articles" }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Articles" })).toHaveAttribute(
+      "href",
+      "https://tiagocosmai.github.io/articles",
+    );
     await waitFor(() => expect(global.fetch).toHaveBeenCalled());
   });
 
