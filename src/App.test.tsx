@@ -1,8 +1,12 @@
 import { act, render, screen, fireEvent } from "@testing-library/react";
-import { describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import App from "./App";
 
 describe("App", () => {
+  beforeEach(() => {
+    window.history.replaceState(null, "", "/");
+  });
+
   it("renderiza o hero", () => {
     render(<App />);
     expect(
@@ -34,6 +38,8 @@ describe("App", () => {
 
     const frame = screen.getByTitle("Blog") as HTMLIFrameElement;
     expect(frame).toHaveAttribute("src", "http://localhost:5174/");
+    expect(frame).toHaveAttribute("allow", "clipboard-write");
+    expect(window.location.pathname).toBe("/blog");
     expect(
       screen.queryByRole("heading", { name: /tiago cosmai/i }),
     ).not.toBeInTheDocument();
@@ -74,5 +80,37 @@ describe("App", () => {
     ).toBeInTheDocument();
     expect(scrollIntoView).toHaveBeenCalled();
     expect(screen.queryByTitle("Blog")).not.toBeInTheDocument();
+    expect(window.location.pathname).toBe("/");
+  });
+
+  it("opens a shared article URL inside the portfolio shell", () => {
+    window.history.replaceState(null, "", "/blog/o-agente-secreto");
+    render(<App />);
+
+    const frame = screen.getByTitle("Blog") as HTMLIFrameElement;
+    expect(frame).toHaveAttribute(
+      "src",
+      "http://localhost:5174/o-agente-secreto",
+    );
+    expect(
+      screen.queryByRole("heading", { name: /tiago cosmai/i }),
+    ).not.toBeInTheDocument();
+
+    act(() => {
+      window.dispatchEvent(
+        new MessageEvent("message", {
+          origin: "http://localhost:5174",
+          data: {
+            channel: "tiagocosmai-embed",
+            topic: "location",
+            pathname: "/desenvolvedores-escravos-da-tecnologia-ia",
+            search: "",
+          },
+        }),
+      );
+    });
+    expect(window.location.pathname).toBe(
+      "/blog/desenvolvedores-escravos-da-tecnologia-ia",
+    );
   });
 });

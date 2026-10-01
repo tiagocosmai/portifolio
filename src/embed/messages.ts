@@ -1,5 +1,6 @@
-import type { Locale } from "../types/locale";
 import type { ThemeMode } from "../context/ThemeContext";
+import type { Locale } from "../types/locale";
+import { portfolioPathFromArticles } from "./blogPaths";
 
 export const EMBED_CHANNEL = "tiagocosmai-embed";
 
@@ -33,17 +34,33 @@ export function isArticlesFrameOrigin(origin: string): boolean {
   }
 }
 
-export function preferencesMessage(locale: Locale, theme: ThemeMode) {
+export function preferencesMessage(locale: Locale, theme: ThemeMode, origin?: string) {
   return {
     channel: EMBED_CHANNEL,
     topic: "preferences" as const,
     locale,
     theme,
+    ...(origin ? { origin } : {}),
   };
 }
 
 export function scrollTopMessage() {
   return { channel: EMBED_CHANNEL, topic: "scroll-top" as const };
+}
+
+export function navigateMessage(path: string) {
+  return { channel: EMBED_CHANNEL, topic: "navigate" as const, path };
+}
+
+export function parseBlogLocation(
+  data: unknown,
+): { pathname: string; search: string } | null {
+  if (!data || typeof data !== "object") return null;
+  const record = data as Record<string, unknown>;
+  if (record.channel !== EMBED_CHANNEL || record.topic !== "location") return null;
+  if (typeof record.pathname !== "string" || typeof record.search !== "string") return null;
+  if (portfolioPathFromArticles(record.pathname, record.search) === null) return null;
+  return { pathname: record.pathname, search: record.search };
 }
 
 export function parseBlogScrollY(data: unknown): number | null {

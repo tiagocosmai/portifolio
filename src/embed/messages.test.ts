@@ -3,6 +3,8 @@ import {
   EMBED_CHANNEL,
   articlesFrameSrc,
   isArticlesFrameOrigin,
+  navigateMessage,
+  parseBlogLocation,
   parseBlogScrollY,
   preferencesMessage,
   scrollTopMessage,
@@ -25,6 +27,30 @@ describe("embed messages", () => {
       channel: EMBED_CHANNEL,
       topic: "scroll-top",
     });
+    expect(navigateMessage("/o-agente-secreto")).toEqual({
+      channel: EMBED_CHANNEL,
+      topic: "navigate",
+      path: "/o-agente-secreto",
+    });
+  });
+
+  it("reads an articles location and ignores other paths", () => {
+    expect(
+      parseBlogLocation({
+        channel: EMBED_CHANNEL,
+        topic: "location",
+        pathname: "/o-agente-secreto",
+        search: "",
+      }),
+    ).toEqual({ pathname: "/o-agente-secreto", search: "" });
+    expect(
+      parseBlogLocation({
+        channel: EMBED_CHANNEL,
+        topic: "location",
+        pathname: "/a/b",
+        search: "",
+      }),
+    ).toBeNull();
   });
 
   it("treats localhost and 127.0.0.1 as the same blog frame", () => {
