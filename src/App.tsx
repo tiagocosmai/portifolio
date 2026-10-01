@@ -22,7 +22,14 @@ import { ThemeProvider, type ThemeMode } from "./context/ThemeContext";
 import { LocaleProvider, useLocale } from "./context/LocaleContext";
 import { SHOW_CONTACT } from "./config/features";
 import {
+  articlesFrameUrl,
+  articlesPathFromPortfolio,
+  portfolioPathFromArticles,
+} from "./embed/blogPaths";
+import {
   isArticlesFrameOrigin,
+  navigateMessage,
+  parseBlogLocation,
   parseBlogScrollY,
   postToFrame,
   preferencesMessage,
@@ -59,12 +66,41 @@ function PortfolioShell({
   onModeChange: () => void;
 }) {
   const { locale, t } = useLocale();
-  const [view, setView] = useState<"portfolio" | "blog">("portfolio");
+  const initialArticlesPath = articlesPathFromPortfolio(
+    window.location.pathname,
+    window.location.search,
+  );
+  const [view, setView] = useState<"portfolio" | "blog">(
+    initialArticlesPath ? "blog" : "portfolio",
+  );
+  const [frameSrc, setFrameSrc] = useState(() =>
+    articlesFrameUrl(initialArticlesPath ?? "/"),
+  );
   const [blogScrollY, setBlogScrollY] = useState(0);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const pendingSection = useRef<string | null>(null);
+  const viewRef = useRef(view);
+  viewRef.current = view;
   const prefsRef = useRef({ locale, theme: mode });
   prefsRef.current = { locale, theme: mode };
+
+  const postNavigate = useCallback((articlesPath: string) => {
+    const frame = iframeRef.current?.contentWindow;
+    if (!frame) return;
+    try {
+      postToFrame(frame, navigateMessage(articlesPath));
+    } catch {
+      /* The iframe is still on about:blank. */
+    }
+  }, []);
+
+  const showBlog = useCallback((articlesPath: string) => {
+    if (viewRef.current !== "blog") {
+      setFrameSrc(articlesFrameUrl(articlesPath));
+    }
+    setBlogScrollY(0);
+    setView("blog");
+  }, []);
 
   const primaryVisible = useElementInView(
     "primary-content",
@@ -79,7 +115,10 @@ function PortfolioShell({
     if (!frame) return;
     const current = prefsRef.current;
     try {
-      postToFrame(frame, preferencesMessage(current.locale, current.theme));
+      postToFrame(
+        frame,
+        preferencesMessage(current.locale, current.theme, window.location.origin),
+      );
     } catch {
       /* The iframe is still on about:blank. */
     }
@@ -93,6 +132,15 @@ function PortfolioShell({
   useEffect(() => {
     const onMessage = (event: MessageEvent) => {
       if (!isArticlesFrameOrigin(event.origin)) return;
+      const location = parseBlogLocation(event.data);
+      if (location) {
+        const next = portfolioPathFromArticles(location.pathname, location.search);
+        const current = `${window.location.pathname}${window.location.search}`;
+        if (next && next !== current) {
+          window.history.pushState({ portfolioView: "blog" }, "", next);
+        }
+        return;
+      }
       const scrollY = parseBlogScrollY(event.data);
       if (scrollY === null) return;
       setBlogScrollY(scrollY);
@@ -109,14 +157,43 @@ function PortfolioShell({
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   }, [view]);
 
+  useEffect(() => {
+    const onPopState = () => {
+      const articlesPath = articlesPathFromPortfolio(
+        window.location.pathname,
+        window.location.search,
+      );
+      if (!articlesPath) {
+        setView("portfolio");
+        return;
+      }
+      if (viewRef.current === "blog") {
+        postNavigate(articlesPath);
+        return;
+      }
+      showBlog(articlesPath);
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, [postNavigate, showBlog]);
+
   const openBlog = () => {
-    setBlogScrollY(0);
-    setView("blog");
+    if (viewRef.current === "blog") {
+      postNavigate("/");
+    } else {
+      showBlog("/");
+    }
+    if (`${window.location.pathname}${window.location.search}` !== "/blog") {
+      window.history.pushState({ portfolioView: "blog" }, "", "/blog");
+    }
   };
 
   const openSection = (id: string) => {
     if (view === "blog") {
       pendingSection.current = id;
+      if (`${window.location.pathname}${window.location.search}` !== "/") {
+        window.history.pushState({ portfolioView: "portfolio" }, "", "/");
+      }
       setView("portfolio");
       return;
     }
@@ -151,6 +228,7 @@ function PortfolioShell({
           frameRef={iframeRef}
           title={t("nav_blog")}
           isDark={isDark}
+          src={frameSrc}
           onLoad={publishPreferences}
         />
       ) : (
