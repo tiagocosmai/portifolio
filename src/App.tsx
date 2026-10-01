@@ -24,6 +24,8 @@ import { SHOW_CONTACT } from "./config/features";
 import {
   articlesFrameUrl,
   articlesPathFromPortfolio,
+  localeFromPortfolioPath,
+  localizePortfolioPath,
   portfolioPathFromArticles,
 } from "./embed/blogPaths";
 import {
@@ -65,7 +67,7 @@ function PortfolioShell({
   mode: ThemeMode;
   onModeChange: () => void;
 }) {
-  const { locale, t } = useLocale();
+  const { locale, setLocale, t } = useLocale();
   const initialArticlesPath = articlesPathFromPortfolio(
     window.location.pathname,
     window.location.search,
@@ -83,6 +85,8 @@ function PortfolioShell({
   viewRef.current = view;
   const prefsRef = useRef({ locale, theme: mode });
   prefsRef.current = { locale, theme: mode };
+  const localeRef = useRef(locale);
+  localeRef.current = locale;
 
   const postNavigate = useCallback((articlesPath: string) => {
     const frame = iframeRef.current?.contentWindow;
@@ -130,11 +134,23 @@ function PortfolioShell({
   }, [view, locale, mode, publishPreferences]);
 
   useEffect(() => {
+    const current = `${window.location.pathname}${window.location.search}`;
+    const next = localizePortfolioPath(current, locale);
+    if (next !== current) {
+      window.history.replaceState(window.history.state, "", next);
+    }
+  }, [locale]);
+
+  useEffect(() => {
     const onMessage = (event: MessageEvent) => {
       if (!isArticlesFrameOrigin(event.origin)) return;
       const location = parseBlogLocation(event.data);
       if (location) {
-        const next = portfolioPathFromArticles(location.pathname, location.search);
+        const next = portfolioPathFromArticles(
+          location.pathname,
+          location.search,
+          localeRef.current,
+        );
         const current = `${window.location.pathname}${window.location.search}`;
         if (next && next !== current) {
           window.history.pushState({ portfolioView: "blog" }, "", next);
@@ -159,6 +175,7 @@ function PortfolioShell({
 
   useEffect(() => {
     const onPopState = () => {
+      setLocale(localeFromPortfolioPath(window.location.pathname) ?? "pt");
       const articlesPath = articlesPathFromPortfolio(
         window.location.pathname,
         window.location.search,
@@ -175,7 +192,7 @@ function PortfolioShell({
     };
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
-  }, [postNavigate, showBlog]);
+  }, [postNavigate, setLocale, showBlog]);
 
   const openBlog = () => {
     if (viewRef.current === "blog") {
@@ -183,16 +200,18 @@ function PortfolioShell({
     } else {
       showBlog("/");
     }
-    if (`${window.location.pathname}${window.location.search}` !== "/blog") {
-      window.history.pushState({ portfolioView: "blog" }, "", "/blog");
+    const next = localizePortfolioPath("/blog", locale);
+    if (`${window.location.pathname}${window.location.search}` !== next) {
+      window.history.pushState({ portfolioView: "blog" }, "", next);
     }
   };
 
   const openSection = (id: string) => {
     if (view === "blog") {
       pendingSection.current = id;
-      if (`${window.location.pathname}${window.location.search}` !== "/") {
-        window.history.pushState({ portfolioView: "portfolio" }, "", "/");
+      const next = localizePortfolioPath("/", locale);
+      if (`${window.location.pathname}${window.location.search}` !== next) {
+        window.history.pushState({ portfolioView: "portfolio" }, "", next);
       }
       setView("portfolio");
       return;

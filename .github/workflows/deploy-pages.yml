@@ -47,8 +47,11 @@ jobs:
           grep -q 'assets/' dist/index.html || (echo 'dist must reference bundled assets' && exit 1)
           ! grep -q '/tiagocosmai/' dist/index.html || (echo 'dist must use root base, not /tiagocosmai/' && exit 1)
           test -f dist/404.html
-          test -f dist/blog/index.html
-          test -f dist/blog/o-agente-secreto/index.html
+          test -f dist/pt/index.html
+          test -f dist/pt/blog/index.html
+          test -f dist/pt/blog/o-agente-secreto/index.html
+          test -f dist/en/blog/index.html
+          test -f dist/es/blog/index.html
 
       - name: Deploy to tiagocosmai.github.io (gh-pages)
         uses: peaceiris/actions-gh-pages@v4

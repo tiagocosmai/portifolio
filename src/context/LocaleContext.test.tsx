@@ -24,6 +24,7 @@ describe("LocaleProvider", () => {
 
   afterEach(() => {
     vi.restoreAllMocks();
+    window.history.replaceState(null, "", "/");
   });
 
   it("provides locale and t()", () => {
@@ -37,6 +38,21 @@ describe("LocaleProvider", () => {
     );
     expect(screen.getByTestId("loc")).toHaveTextContent("en");
     expect(screen.getByTestId("nav").textContent).toBeTruthy();
+  });
+
+  it("reads /en and /es from the URL and stores that language", () => {
+    localStorage.setItem("portfolio-locale", "pt");
+    window.history.replaceState(null, "", "/es/blog/o-agente-secreto");
+    render(
+      <ThemeProvider mode="dark">
+        <LocaleProvider>
+          <Probe />
+        </LocaleProvider>
+      </ThemeProvider>,
+    );
+    expect(screen.getByTestId("loc")).toHaveTextContent("es");
+    expect(localStorage.getItem("portfolio-locale")).toBe("es");
+    window.history.replaceState(null, "", "/");
   });
 
   it("setLocale updates html lang and persists", () => {

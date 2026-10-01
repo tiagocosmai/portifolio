@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 import {
   articlesFrameUrl,
   articlesPathFromPortfolio,
+  localeFromPortfolioPath,
+  localizePortfolioPath,
   portfolioPathFromArticles,
 } from "./blogPaths";
 
@@ -20,10 +22,43 @@ describe("blog paths", () => {
 
   it("maps an articles route back to the portfolio blog URL", () => {
     expect(portfolioPathFromArticles("/o-agente-secreto", "")).toBe(
-      "/blog/o-agente-secreto",
+      "/pt/blog/o-agente-secreto",
     );
-    expect(portfolioPathFromArticles("/", "?tag=AI")).toBe("/blog?tag=AI");
+    expect(portfolioPathFromArticles("/", "?tag=AI")).toBe("/pt/blog?tag=AI");
     expect(portfolioPathFromArticles("/a/b", "")).toBeNull();
+  });
+
+  it("prefixes every known language, including portuguese", () => {
+    expect(localizePortfolioPath("/", "pt")).toBe("/pt");
+    expect(localizePortfolioPath("/blog/o-agente-secreto", "pt")).toBe(
+      "/pt/blog/o-agente-secreto",
+    );
+    expect(articlesPathFromPortfolio("/pt/blog/o-agente-secreto", "")).toBe(
+      "/o-agente-secreto",
+    );
+    expect(localeFromPortfolioPath("/pt")).toBe("pt");
+    expect(localeFromPortfolioPath("/pt/blog/o-agente-secreto")).toBe("pt");
+  });
+
+  it("keeps english and spanish prefixes on blog URLs and reads them back", () => {
+    expect(articlesPathFromPortfolio("/en/blog/o-agente-secreto", "")).toBe(
+      "/o-agente-secreto",
+    );
+    expect(articlesPathFromPortfolio("/es/blog", "?tag=AI")).toBe("/?tag=AI");
+    expect(articlesPathFromPortfolio("/en", "")).toBeNull();
+    expect(portfolioPathFromArticles("/o-agente-secreto", "", "en")).toBe(
+      "/en/blog/o-agente-secreto",
+    );
+    expect(portfolioPathFromArticles("/", "?tag=AI", "es")).toBe("/es/blog?tag=AI");
+    expect(localizePortfolioPath("/blog/o-agente-secreto", "en")).toBe(
+      "/en/blog/o-agente-secreto",
+    );
+    expect(localizePortfolioPath("/en/blog/o-agente-secreto", "pt")).toBe(
+      "/pt/blog/o-agente-secreto",
+    );
+    expect(localizePortfolioPath("/", "es")).toBe("/es");
+    expect(localeFromPortfolioPath("/es/blog/o-agente-secreto")).toBe("es");
+    expect(localeFromPortfolioPath("/blog/o-agente-secreto")).toBeNull();
   });
 
   it("builds the iframe URL for dev and for GitHub Pages", () => {

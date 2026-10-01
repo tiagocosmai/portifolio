@@ -4,7 +4,8 @@ import path from "node:path";
 import react from "@vitejs/plugin-react";
 import type { Connect, Plugin, PreviewServer, ViteDevServer } from "vite";
 import { defineConfig } from "vitest/config";
-import { injectPageMeta, readBlogArticles } from "./src/embed/blogPageHtml";
+import { injectPageMeta, localizedBlogFiles, readLocalizedBlogArticles } from "./src/embed/blogPageHtml";
+import { LOCALES } from "./src/types/locale";
 import {
   CURRICULO_ROUTES,
   renderCurriculoHtml,
@@ -41,31 +42,24 @@ function blogSharePages(): Plugin {
         );
         return;
       }
-      const articles = readBlogArticles(fs.readFileSync(catalog, "utf8"));
-      const blogDir = path.resolve(outDir, "blog");
-      fs.mkdirSync(blogDir, { recursive: true });
-      fs.writeFileSync(
-        path.join(blogDir, "index.html"),
-        injectPageMeta(index, {
-          title: "Blog — Tiago Cosmai",
-          description:
-            "Ensaios sobre tecnologia, carreira e inteligência artificial.",
-          url: `${PORTFOLIO_ORIGIN}/blog`,
-          type: "website",
-        }),
-      );
-      for (const article of articles) {
-        const dir = path.join(blogDir, article.slug);
-        fs.mkdirSync(dir, { recursive: true });
+      const articles = readLocalizedBlogArticles(fs.readFileSync(catalog, "utf8"));
+      for (const page of localizedBlogFiles(articles, PORTFOLIO_ORIGIN)) {
+        const filePath = path.resolve(outDir, page.fileName);
+        fs.mkdirSync(path.dirname(filePath), { recursive: true });
         fs.writeFileSync(
-          path.join(dir, "index.html"),
+          filePath,
           injectPageMeta(index, {
-            title: article.title,
-            description: article.description,
-            url: `${PORTFOLIO_ORIGIN}/blog/${article.slug}`,
-            type: "article",
+            title: page.title,
+            description: page.description,
+            url: page.url,
+            type: page.type,
           }),
         );
+      }
+      for (const { value: locale } of LOCALES) {
+        const localeHome = path.resolve(outDir, locale, "index.html");
+        fs.mkdirSync(path.dirname(localeHome), { recursive: true });
+        fs.writeFileSync(localeHome, index);
       }
     },
   };
