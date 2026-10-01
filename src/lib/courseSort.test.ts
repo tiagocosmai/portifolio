@@ -37,4 +37,15 @@ describe("sortCourseItemsByYearDesc", () => {
       "A – 2010 – 1 Hora",
     ]);
   });
+
+  it("lists a speaker talk before other events of the same year", () => {
+    const sorted = sortCourseItemsByYearDesc([
+      { pt: "Meetup – 2026 – 1 Hora" },
+      { pt: "Palestra – 2026", role: "speaker" },
+    ]);
+    expect(sorted.map((item) => item.pt)).toEqual([
+      "Palestra – 2026",
+      "Meetup – 2026 – 1 Hora",
+    ]);
+  });
 });

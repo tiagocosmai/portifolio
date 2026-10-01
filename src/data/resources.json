@@ -121,6 +121,16 @@
     "en": "Recording ↗",
     "es": "Grabación ↗"
   },
+  "courses_event_page_link": {
+    "pt": "Página do evento ↗",
+    "en": "Event page ↗",
+    "es": "Página del evento ↗"
+  },
+  "courses_role_speaker": {
+    "pt": "Palestrante",
+    "en": "Speaker",
+    "es": "Ponente"
+  },
   "history_show_more": { "pt": "Ver mais", "en": "Show more", "es": "Ver más" },
   "history_show_less": { "pt": "Ver menos", "en": "Show less", "es": "Ver menos" },
   "history_hard_skills": {
@@ -242,6 +252,61 @@
     "pt": "Escolha as secções e o nível de detalhe de cada uma.",
     "en": "Pick sections and how much detail each one shows.",
     "es": "Elija secciones y el nivel de detalle de cada una."
+  },
+  "resume_mode_ai": {
+    "pt": "Leitura IA",
+    "en": "AI reading",
+    "es": "Lectura IA"
+  },
+  "resume_mode_ai_hint": {
+    "pt": "Perfil completo, numa coluna, com todos os campos rotulados para extração automática.",
+    "en": "Complete profile, single column, every field labeled for automatic extraction.",
+    "es": "Perfil completo, en una columna, con todos los campos etiquetados para extracción automática."
+  },
+  "resume_ai_open_html": {
+    "pt": "Abrir a versão HTML para leitura por IA",
+    "en": "Open the HTML version for AI reading",
+    "es": "Abrir la versión HTML para lectura por IA"
+  },
+  "resume_ai_doc_note": {
+    "pt": "Currículo completo em texto linear, com rótulos explícitos, para leitura por sistemas de inteligência artificial.",
+    "en": "Complete résumé in linear text, with explicit labels, for reading by artificial intelligence systems.",
+    "es": "Currículo completo en texto lineal, con etiquetas explícitas, para lectura por sistemas de inteligencia artificial."
+  },
+  "resume_ai_languages_nav": {
+    "pt": "Idiomas deste documento",
+    "en": "Languages of this document",
+    "es": "Idiomas de este documento"
+  },
+  "resume_field_role": {
+    "pt": "Cargo",
+    "en": "Role",
+    "es": "Cargo"
+  },
+  "resume_field_company": {
+    "pt": "Empresa",
+    "en": "Company",
+    "es": "Empresa"
+  },
+  "resume_field_period": {
+    "pt": "Período",
+    "en": "Period",
+    "es": "Período"
+  },
+  "resume_field_organization": {
+    "pt": "Organização",
+    "en": "Organization",
+    "es": "Organización"
+  },
+  "resume_field_status": {
+    "pt": "Estado",
+    "en": "Status",
+    "es": "Estado"
+  },
+  "resume_field_verification": {
+    "pt": "Verificação",
+    "en": "Verification",
+    "es": "Verificación"
   },
   "resume_custom_always_main": {
     "pt": "Nome, título, sobre e contactos (e-mail, WhatsApp, localização, LinkedIn, GitHub, portfólio) entram sempre no PDF.",

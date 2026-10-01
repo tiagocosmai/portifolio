@@ -39,6 +39,7 @@ export default function Courses() {
       eventItems: sortCourseItemsByYearDesc(d.events).map((it) => ({
         line: localizeCourseLine(it.pt, locale),
         recordingUrl: it.url?.trim() || undefined,
+        speaker: it.role === "speaker",
       })),
     };
   }, [locale]);
@@ -137,6 +138,17 @@ export default function Courses() {
                 className="mb-2 break-inside-avoid pl-1"
                 style={{ pageBreakInside: "avoid" }}
               >
+                {it.speaker ? (
+                  <span
+                    className={`mr-2 inline-block rounded-full border px-2 py-0.5 text-xs font-bold ${
+                      isDark
+                        ? "border-[#00FF41]/50 text-[#00FF41]"
+                        : "border-[#166534]/40 text-[#166534]"
+                    }`}
+                  >
+                    {t("courses_role_speaker")}
+                  </span>
+                ) : null}
                 {it.line}
                 {it.recordingUrl ? (
                   <>
@@ -147,7 +159,9 @@ export default function Courses() {
                       rel="noreferrer"
                       className={linkC}
                     >
-                      {t("courses_event_recording_link")}
+                      {it.speaker
+                        ? t("courses_event_page_link")
+                        : t("courses_event_recording_link")}
                     </a>
                   </>
                 ) : null}

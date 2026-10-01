@@ -11,6 +11,7 @@ import {
 import { sortCourseItemsByYearDesc } from "../lib/courseSort";
 import type { PickedContent } from "../types/content";
 import type { Locale } from "../types/locale";
+import { buildAiResumeHtml } from "./buildAiResumeHtml";
 
 export type ResumeMode =
   | "ultra_compact"
@@ -18,7 +19,8 @@ export type ResumeMode =
   | "objective"
   | "favorito"
   | "complete"
-  | "custom";
+  | "custom"
+  | "ai";
 
 export const CUSTOM_RESUME_SECTION_ORDER = [
   "expertise",
@@ -578,6 +580,7 @@ function blockCourses(locale: Locale): string {
   const eventItems = sortCourseItemsByYearDesc(d.events).map((it) => ({
     line: localizeCourseLine(it.pt, locale),
     url: it.url?.trim() || "",
+    speaker: it.role === "speaker",
   }));
   let inner = "";
   if (distanceGroups.length) {
@@ -606,9 +609,15 @@ function blockCourses(locale: Locale): string {
     inner += `<div class="course-block"><h4>${esc(t(locale, "courses_section_events"))}</h4><ul>`;
     inner += eventItems
       .map((it) => {
-        let li = `<li>${esc(it.line)}`;
+        const speaker = it.speaker
+          ? `<strong>${esc(t(locale, "courses_role_speaker"))}.</strong> `
+          : "";
+        const linkLabel = it.speaker
+          ? t(locale, "courses_event_page_link")
+          : t(locale, "courses_event_recording_link");
+        let li = `<li>${speaker}${esc(it.line)}`;
         if (it.url)
-          li += ` <a href="${esc(it.url)}" class="main-link">${esc(t(locale, "courses_event_recording_link"))}</a>`;
+          li += ` <a href="${esc(it.url)}" class="main-link">${esc(linkLabel)}</a>`;
         li += `</li>`;
         return li;
       })
@@ -623,6 +632,10 @@ export function buildResumeHtml(
   mode: ResumeMode,
   options: BuildResumeOptions,
 ): string {
+  if (mode === "ai") {
+    return buildAiResumeHtml(locale, options);
+  }
+
   const c = deepPick(rawContent, locale) as unknown as PickedContent;
   const siteIntroMax = (
     appConfig as { site?: { mainIntroParagraphsMax?: number } }

@@ -2,9 +2,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import react from "@vitejs/plugin-react";
-import type { Plugin } from "vite";
+import type { Connect, Plugin, PreviewServer, ViteDevServer } from "vite";
 import { defineConfig } from "vitest/config";
 import { injectPageMeta, readBlogArticles } from "./src/embed/blogPageHtml";
+import {
+  CURRICULO_ROUTES,
+  renderCurriculoHtml,
+} from "./src/resume/curriculoRoutes";
 
 const PORTFOLIO_ORIGIN = "https://tiagocosmai.github.io";
 
@@ -67,9 +71,46 @@ function blogSharePages(): Plugin {
   };
 }
 
+function serveCurriculo(
+  req: Connect.IncomingMessage,
+  res: Connect.ServerResponse,
+  next: Connect.NextFunction,
+) {
+  const requestPath = (req.url ?? "").split("?")[0].replace(/\/$/, "") || "/";
+  const route = CURRICULO_ROUTES.find((item) => item.urlPath === requestPath);
+  if (!route) {
+    next();
+    return;
+  }
+  res.statusCode = 200;
+  res.setHeader("Content-Type", "text/html; charset=utf-8");
+  res.end(renderCurriculoHtml(route.locale));
+}
+
+function curriculoPages(): Plugin {
+  return {
+    name: "curriculo-pages",
+    configureServer(server: ViteDevServer) {
+      server.middlewares.use(serveCurriculo);
+    },
+    configurePreviewServer(server: PreviewServer) {
+      server.middlewares.use(serveCurriculo);
+    },
+    generateBundle() {
+      for (const route of CURRICULO_ROUTES) {
+        this.emitFile({
+          type: "asset",
+          fileName: route.fileName,
+          source: renderCurriculoHtml(route.locale),
+        });
+      }
+    },
+  };
+}
+
 // Site na raiz: https://tiagocosmai.github.io (publicado a partir do repo portifolio → tiagocosmai.github.io)
 export default defineConfig({
-  plugins: [react(), blogSharePages()],
+  plugins: [react(), curriculoPages(), blogSharePages()],
   base: "/",
   test: {
     environment: "jsdom",
