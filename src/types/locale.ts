@@ -8,6 +8,10 @@ export const LOCALES: { value: Locale; label: string }[] = [
   { value: "es", label: "ES" },
 ];
 
+export function isLocale(value: string): value is Locale {
+  return LOCALES.some((item) => item.value === value);
+}
+
 export function isTri(v: unknown): v is Tri {
   return (
     typeof v === "object" &&

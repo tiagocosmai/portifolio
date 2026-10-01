@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { injectPageMeta, readBlogArticles } from "./blogPageHtml";
+import { injectPageMeta, localizedBlogFiles, readBlogArticles, readLocalizedBlogArticles } from "./blogPageHtml";
 
 const INDEX = `<!DOCTYPE html>
 <html lang="en">
@@ -25,6 +25,52 @@ describe("blog page html", () => {
     );
     expect(articles).toEqual([
       { slug: "o-agente-secreto", title: "Título", description: 'Aspas "aqui"' },
+    ]);
+  });
+
+  it("builds a share page for each language of the blog and of each article", () => {
+    const articles = readLocalizedBlogArticles(
+      JSON.stringify({
+        articles: [
+          {
+            slug: "o-agente-secreto",
+            locales: {
+              pt: { title: "Título", description: "Descrição" },
+              en: { title: "Title", description: "Description" },
+              es: { title: "Título es", description: "Descripción" },
+            },
+          },
+        ],
+      }),
+    );
+    expect(localizedBlogFiles(articles)).toEqual([
+      expect.objectContaining({
+        fileName: "pt/blog/index.html",
+        url: "https://tiagocosmai.github.io/pt/blog",
+      }),
+      expect.objectContaining({
+        fileName: "pt/blog/o-agente-secreto/index.html",
+        title: "Título",
+        url: "https://tiagocosmai.github.io/pt/blog/o-agente-secreto",
+      }),
+      expect.objectContaining({
+        fileName: "en/blog/index.html",
+        url: "https://tiagocosmai.github.io/en/blog",
+      }),
+      expect.objectContaining({
+        fileName: "en/blog/o-agente-secreto/index.html",
+        title: "Title",
+        url: "https://tiagocosmai.github.io/en/blog/o-agente-secreto",
+      }),
+      expect.objectContaining({
+        fileName: "es/blog/index.html",
+        url: "https://tiagocosmai.github.io/es/blog",
+      }),
+      expect.objectContaining({
+        fileName: "es/blog/o-agente-secreto/index.html",
+        title: "Título es",
+        url: "https://tiagocosmai.github.io/es/blog/o-agente-secreto",
+      }),
     ]);
   });
 

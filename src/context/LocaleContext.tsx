@@ -9,6 +9,7 @@ import {
 } from "react";
 import rawContent from "../data/content.json";
 import rawResources from "../data/resources.json";
+import { localeFromPortfolioPath } from "../embed/blogPaths";
 import { deepPick } from "../i18n/deepPick";
 import type { PickedContent } from "../types/content";
 import { type Locale, type Tri } from "../types/locale";
@@ -18,6 +19,17 @@ const STORAGE_KEY = "portfolio-locale";
 const resources = rawResources as Record<string, Tri>;
 
 function detectLocale(): Locale {
+  if (typeof window !== "undefined" && typeof window.location?.pathname === "string") {
+    const fromUrl = localeFromPortfolioPath(window.location.pathname);
+    if (fromUrl) {
+      try {
+        localStorage.setItem(STORAGE_KEY, fromUrl);
+      } catch {
+        /* ignore */
+      }
+      return fromUrl;
+    }
+  }
   try {
     const s = localStorage.getItem(STORAGE_KEY);
     if (s === "pt" || s === "en" || s === "es") return s;
