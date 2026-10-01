@@ -1956,6 +1956,20 @@
       },
       {
         "title": {
+          "pt": "Artigos",
+          "en": "Articles",
+          "es": "Artículos"
+        },
+        "description": {
+          "pt": "Blog com ensaios em português, inglês e espanhol sobre tecnologia, carreira e inteligência artificial, com busca, filtros por tag e data e flashcards.",
+          "en": "Blog with essays in Portuguese, English, and Spanish on technology, career, and artificial intelligence, with search, tag and date filters, and flashcards.",
+          "es": "Blog con ensayos en portugués, inglés y español sobre tecnología, carrera e inteligencia artificial, con búsqueda, filtros por etiqueta y fecha y tarjetas de estudio."
+        },
+        "github_url": "https://github.com/tiagocosmai/articles",
+        "live_url": "https://tiagocosmai.github.io/articles"
+      },
+      {
+        "title": {
           "pt": "Portfólio",
           "en": "Portfolio",
           "es": "Portafolio"
