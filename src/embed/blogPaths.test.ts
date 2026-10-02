@@ -61,14 +61,14 @@ describe("blog paths", () => {
     expect(localeFromPortfolioPath("/blog/o-agente-secreto")).toBeNull();
   });
 
-  it("builds the iframe URL for dev and for GitHub Pages", () => {
+  it("builds the iframe URL for dev and for the Vercel site", () => {
     expect(articlesFrameUrl("/o-agente-secreto", true)).toBe(
       "http://localhost:5174/o-agente-secreto",
     );
     expect(articlesFrameUrl("/?tag=AI", true)).toBe("http://localhost:5174/?tag=AI");
-    expect(articlesFrameUrl("/", false)).toBe("/articles/");
+    expect(articlesFrameUrl("/", false)).toBe("https://tiagocosmai-articles.vercel.app/");
     expect(articlesFrameUrl("/o-agente-secreto", false)).toBe(
-      "/articles/o-agente-secreto",
+      "https://tiagocosmai-articles.vercel.app/o-agente-secreto",
     );
   });
 });

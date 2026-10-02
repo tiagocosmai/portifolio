@@ -1966,7 +1966,7 @@
           "es": "Blog con ensayos en portugués, inglés y español sobre tecnología, carrera e inteligencia artificial, con búsqueda, filtros por etiqueta y fecha y tarjetas de estudio."
         },
         "github_url": "https://github.com/tiagocosmai/articles",
-        "live_url": "https://tiagocosmai.github.io/articles"
+        "live_url": "https://tiagocosmai-articles.vercel.app"
       },
       {
         "title": {

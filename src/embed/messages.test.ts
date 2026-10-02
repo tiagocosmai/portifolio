@@ -11,9 +11,9 @@ import {
 } from "./messages";
 
 describe("embed messages", () => {
-  it("points the iframe at the articles dev server or the GitHub Pages path", () => {
+  it("points the iframe at the articles dev server or the Vercel site", () => {
     expect(articlesFrameSrc(true)).toBe("http://localhost:5174/");
-    expect(articlesFrameSrc(false)).toBe("/articles/");
+    expect(articlesFrameSrc(false)).toBe("https://tiagocosmai-articles.vercel.app/");
   });
 
   it("builds preference and scroll-top payloads", () => {

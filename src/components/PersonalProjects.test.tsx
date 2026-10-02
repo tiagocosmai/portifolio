@@ -30,7 +30,7 @@ describe("PersonalProjects", () => {
     ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Articles" })).toHaveAttribute(
       "href",
-      "https://tiagocosmai.github.io/articles",
+      "https://tiagocosmai-articles.vercel.app",
     );
     await waitFor(() => expect(global.fetch).toHaveBeenCalled());
   });

@@ -61,8 +61,10 @@ export function portfolioPathFromArticles(
   return localizePortfolioPath(`/blog/${slug}${query}`, locale);
 }
 
+export const ARTICLES_PRODUCTION_ORIGIN = "https://tiagocosmai-articles.vercel.app";
+
 export function articlesFrameUrl(articlesPath: string, isDev = import.meta.env.DEV): string {
-  const base = (isDev ? "http://localhost:5174/" : "/articles/").replace(/\/$/, "");
+  const base = isDev ? "http://localhost:5174" : ARTICLES_PRODUCTION_ORIGIN;
   if (articlesPath === "/" || articlesPath.startsWith("/?")) {
     return `${base}/${articlesPath.slice(1)}`;
   }

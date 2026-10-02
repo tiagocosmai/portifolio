@@ -1,12 +1,12 @@
 import type { ThemeMode } from "../context/ThemeContext";
 import type { Locale } from "../types/locale";
-import { portfolioPathFromArticles } from "./blogPaths";
+import { ARTICLES_PRODUCTION_ORIGIN, portfolioPathFromArticles } from "./blogPaths";
 
 export const EMBED_CHANNEL = "tiagocosmai-embed";
 
 export function articlesFrameSrc(isDev = import.meta.env.DEV): string {
   if (isDev) return "http://localhost:5174/";
-  return "/articles/";
+  return `${ARTICLES_PRODUCTION_ORIGIN}/`;
 }
 
 export function articlesFrameOrigin(): string {
