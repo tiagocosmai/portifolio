@@ -52,6 +52,7 @@ async function main() {
     process.exit(1);
   }
 
+  fs.copyFileSync(indexPath, path.join(root, "dist", "404.html"));
   console.log("\n[deploy] 2/3 — dist/ validado (HTML de produção, raiz)\n");
 
   const ghpages = require("gh-pages");

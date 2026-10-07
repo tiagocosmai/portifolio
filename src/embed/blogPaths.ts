@@ -36,10 +36,22 @@ export function localizePortfolioPath(pathnameWithSearch: string, locale: Locale
   return `/${locale}${path}${search}`;
 }
 
+const ADMIN_SECTIONS = new Set(["posts", "comentarios"]);
+
+function adminArticlesPath(path: string, query: string): string | null {
+  if (path === "/admin") return `/admin${query}`;
+  if (!path.startsWith("/admin/")) return null;
+  const section = path.slice("/admin/".length);
+  if (!ADMIN_SECTIONS.has(section)) return null;
+  return `/admin/${section}${query}`;
+}
+
 /** Portfolio URL `/blog` or `/blog/:slug` → path inside the articles app. */
 export function articlesPathFromPortfolio(pathname: string, search: string): string | null {
   const path = stripLocalePrefix(pathname);
   const query = queryOf(search);
+  const admin = adminArticlesPath(path, query);
+  if (admin) return admin;
   if (path === "/blog") return `/${query}`;
   if (!path.startsWith("/blog/")) return null;
   const slug = path.slice("/blog/".length);
@@ -55,6 +67,9 @@ export function portfolioPathFromArticles(
 ): string | null {
   const path = barePath(pathname);
   const query = queryOf(search);
+  if (path === "/admin" || path === "/admin/posts" || path === "/admin/comentarios") {
+    return localizePortfolioPath(`${path}${query}`, locale);
+  }
   if (path === "/") return localizePortfolioPath(`/blog${query}`, locale);
   const slug = path.startsWith("/") ? path.slice(1) : path;
   if (slug.includes("/") || !SLUG.test(slug)) return null;

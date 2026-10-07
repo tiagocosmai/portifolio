@@ -83,6 +83,25 @@ describe("App", () => {
     expect(window.location.pathname).toBe("/en");
   });
 
+  it("opens the admin URL inside the portfolio shell", () => {
+    localStorage.setItem("portfolio-locale", "pt");
+    window.history.replaceState(null, "", "/admin");
+    render(<App />);
+
+    expect(screen.getByTitle("Blog")).toHaveAttribute("src", "http://localhost:5174/admin");
+    expect(window.location.pathname).toBe("/pt/admin");
+    expect(screen.queryByRole("heading", { name: /tiago cosmai/i })).not.toBeInTheDocument();
+  });
+
+  it("opens /pt/admin inside the portfolio shell", () => {
+    localStorage.setItem("portfolio-locale", "pt");
+    window.history.replaceState(null, "", "/pt/admin");
+    render(<App />);
+
+    expect(screen.getByTitle("Blog")).toHaveAttribute("src", "http://localhost:5174/admin");
+    expect(window.location.pathname).toBe("/pt/admin");
+  });
+
   it("opens a shared article URL inside the portfolio shell", () => {
     localStorage.setItem("portfolio-locale", "pt");
     window.history.replaceState(null, "", "/blog/o-agente-secreto");

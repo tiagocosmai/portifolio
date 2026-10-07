@@ -20,6 +20,21 @@ describe("blog paths", () => {
     expect(articlesPathFromPortfolio("/blog/../secret", "")).toBeNull();
   });
 
+  it("maps the portfolio admin URL onto the articles app", () => {
+    expect(articlesPathFromPortfolio("/admin", "")).toBe("/admin");
+    expect(articlesPathFromPortfolio("/pt/admin", "")).toBe("/admin");
+    expect(articlesPathFromPortfolio("/en/admin/posts", "")).toBe("/admin/posts");
+    expect(articlesPathFromPortfolio("/es/admin/comentarios", "?status=pending")).toBe(
+      "/admin/comentarios?status=pending",
+    );
+    expect(articlesPathFromPortfolio("/admin/secret", "")).toBeNull();
+    expect(portfolioPathFromArticles("/admin", "")).toBe("/pt/admin");
+    expect(portfolioPathFromArticles("/admin/posts", "", "en")).toBe("/en/admin/posts");
+    expect(articlesFrameUrl("/admin", false)).toBe(
+      "https://tiagocosmai-articles.vercel.app/admin",
+    );
+  });
+
   it("maps an articles route back to the portfolio blog URL", () => {
     expect(portfolioPathFromArticles("/o-agente-secreto", "")).toBe(
       "/pt/blog/o-agente-secreto",
