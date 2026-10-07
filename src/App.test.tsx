@@ -38,7 +38,7 @@ describe("App", () => {
 
     const frame = screen.getByTitle("Blog") as HTMLIFrameElement;
     expect(frame).toHaveAttribute("src", "http://localhost:5174/");
-    expect(frame).toHaveAttribute("allow", "clipboard-write");
+    expect(frame).toHaveAttribute("allow", "clipboard-write; storage-access");
     expect(window.location.pathname).toBe("/en/blog");
     expect(
       screen.queryByRole("heading", { name: /tiago cosmai/i }),
