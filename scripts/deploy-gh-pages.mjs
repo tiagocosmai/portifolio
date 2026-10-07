@@ -20,7 +20,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 
 /** User/org site = URL na raiz do domínio github.io */
-const PAGES_REPO_URL = "https://github.com/tiagocosmai/tiagocosmai.github.io.git";
+const PAGES_REPO_URL = "git@github.com:tiagocosmai/tiagocosmai.github.io.git";
 
 async function main() {
   console.log("\n[deploy] 1/3 — npm run build (Vite → dist/, base /)\n");
@@ -66,6 +66,10 @@ async function main() {
     branch: "gh-pages",
     nojekyll: true,
     message: `Deploy ${new Date().toISOString()}`,
+    user: {
+      name: process.env.GIT_AUTHOR_NAME || "Tiago Cosmai",
+      email: process.env.GIT_AUTHOR_EMAIL || "tiagocosmai@gmail.com",
+    },
   });
 
   console.log(
