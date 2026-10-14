@@ -80,6 +80,8 @@ function toEn(s: string): string {
       "Remote work: collaboration, focus, and productivity – 2026 – 12 hours",
     "Meetup – Event-Driven com RabbitMQ e Oragon.RabbitMQ – 2026 – 4 Horas":
       "Meetup – Event-driven architecture with RabbitMQ and Oragon.RabbitMQ – 2026 – 4 hours",
+    "Imersão Agentes de IA na Prática – Daxus – 2026 – 8 Horas":
+      "Immersion: AI Agents in Practice – Daxus – 2026 – 8 hours",
   };
   if (exact[s]) return exact[s];
 
@@ -341,6 +343,8 @@ function toEs(s: string): string {
       "Trabajo remoto: colaboración, enfoque y productividad – 2026 – 12 horas",
     "Meetup – Event-Driven com RabbitMQ e Oragon.RabbitMQ – 2026 – 4 Horas":
       "Meetup – Arquitectura orientada a eventos con RabbitMQ y Oragon.RabbitMQ – 2026 – 4 horas",
+    "Imersão Agentes de IA na Prática – Daxus – 2026 – 8 Horas":
+      "Inmersión: agentes de IA en la práctica – Daxus – 2026 – 8 horas",
   };
   if (exact[s]) return exact[s];
 

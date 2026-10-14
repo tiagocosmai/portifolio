@@ -42,6 +42,16 @@ describe("localizeCourseLine — exhaustive courses.json", () => {
     );
   });
 
+  it("translates the Daxus AI agents immersion", () => {
+    const line = "Imersão Agentes de IA na Prática – Daxus – 2026 – 8 Horas";
+    expect(localizeCourseLine(line, "en")).toBe(
+      "Immersion: AI Agents in Practice – Daxus – 2026 – 8 hours",
+    );
+    expect(localizeCourseLine(line, "es")).toBe(
+      "Inmersión: agentes de IA en la práctica – Daxus – 2026 – 8 horas",
+    );
+  });
+
   it("translates every distance course line to en and es", () => {
     for (const g of data.distance) {
       for (const it of g.items) {
