@@ -132,3 +132,4 @@ Meetup – Grafana + Inteligência Artificial: monitorando o consumo de tokens a
 Meetup – OWASP + API Security: dicas de segurança – Security Headers, CORS, manipulando informações sensíveis – 2026 – 3 Horas || https://www.youtube.com/watch?v=51ZbIkNSHQ8
 Meetup – OWASP API Security Top 10: Um guia para a implementação de Back-Ends mais seguros! – 2026 – 3 Horas || https://www.youtube.com/watch?v=4gu8wRzjJaE
 Meetup – Event-Driven com RabbitMQ e Oragon.RabbitMQ – 2026 – 4 Horas || https://www.youtube.com/watch?v=d-WvquqN8j0
+Imersão Agentes de IA na Prática – Daxus – 2026 – 8 Horas
