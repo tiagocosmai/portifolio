@@ -23,6 +23,8 @@ export function localizeCourseProvider(provider: string, locale: Locale): string
 /** PT course line → English */
 function toEn(s: string): string {
   const exact: Record<string, string> = {
+    "Trilha Liderança Técnica – The Developer Conference (TDC) São Paulo – ProMagno, São Paulo - SP – 25/09/2026 – 8 Horas":
+      "Technical Leadership Track – The Developer Conference (TDC) São Paulo – ProMagno, São Paulo - SP – 25/09/2026 – 8 hours",
     "Treinamento Lei Geral de Proteção de Dados CVC Corp – 2020 – 1 Hora":
       "CVC Corp LGPD (General Data Protection Law) training – 2020 – 1 hour",
     "Comunicação Empatica – 2020 – 1 Hora":
@@ -286,6 +288,8 @@ function toEn(s: string): string {
 /** PT course line → Spanish */
 function toEs(s: string): string {
   const exact: Record<string, string> = {
+    "Trilha Liderança Técnica – The Developer Conference (TDC) São Paulo – ProMagno, São Paulo - SP – 25/09/2026 – 8 Horas":
+      "Itinerario de Liderazgo Técnico – The Developer Conference (TDC) São Paulo – ProMagno, São Paulo - SP – 25/09/2026 – 8 horas",
     "Treinamento Lei Geral de Proteção de Dados CVC Corp – 2020 – 1 Hora":
       "Formación LGPD CVC Corp – 2020 – 1 hora",
     "Comunicação Empatica – 2020 – 1 Hora":
