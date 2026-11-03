@@ -1751,6 +1751,20 @@
     "items": [
       {
         "title": {
+          "pt": "Trick or Treat Roulette",
+          "en": "Trick or Treat Roulette",
+          "es": "Trick or Treat Roulette"
+        },
+        "description": {
+          "pt": "Roleta interativa de Halloween desenvolvida com React e TypeScript, com modos de produtos e doces, roleta coringa opcional, efeitos sonoros e cards de prêmio. Configurações e resultados são salvos no navegador.",
+          "en": "Interactive Halloween roulette built with React and TypeScript, featuring product and candy modes, an optional wildcard wheel, sound effects and prize cards. Settings and results are saved in the browser.",
+          "es": "Ruleta interactiva de Halloween desarrollada con React y TypeScript, con modos de productos y dulces, ruleta comodín opcional, efectos de sonido y tarjetas de premios. La configuración y los resultados se guardan en el navegador."
+        },
+        "github_url": "https://github.com/tiagocosmai/trick-or-treat-roulette",
+        "live_url": "https://trick-or-treat-roulette.vercel.app/"
+      },
+      {
+        "title": {
           "pt": "Documentação para Estudo",
           "en": "Study Documentation",
           "es": "Documentación de estudio"
