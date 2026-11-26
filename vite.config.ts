@@ -4,7 +4,12 @@ import path from "node:path";
 import react from "@vitejs/plugin-react";
 import type { Connect, Plugin, PreviewServer, ViteDevServer } from "vite";
 import { defineConfig } from "vitest/config";
-import { injectPageMeta, localizedBlogFiles, readLocalizedBlogArticles } from "./src/embed/blogPageHtml";
+import {
+  injectPageMeta,
+  localizedBlogFiles,
+  readLocalizedBlogArticles,
+  type LocalizedBlogArticle,
+} from "./src/embed/blogPageHtml";
 import { LOCALES } from "./src/types/locale";
 import {
   CURRICULO_ROUTES,
@@ -21,6 +26,17 @@ function articlesCatalogPath(): string | null {
   return candidates.find((file) => fs.existsSync(file)) ?? null;
 }
 
+function buildBlogCatalog(): LocalizedBlogArticle[] {
+  const generatedCatalog = path.resolve("src/data/generatedBlogCatalog.json");
+  if (fs.existsSync(generatedCatalog)) {
+    return readLocalizedBlogArticles(fs.readFileSync(generatedCatalog, "utf8"));
+  }
+
+  const checkedOutCatalog = articlesCatalogPath();
+  if (!checkedOutCatalog) return [];
+  return readLocalizedBlogArticles(fs.readFileSync(checkedOutCatalog, "utf8"));
+}
+
 function blogSharePages(): Plugin {
   let outDir = "dist";
   return {
@@ -35,14 +51,13 @@ function blogSharePages(): Plugin {
       const index = fs.readFileSync(indexPath, "utf8");
       fs.writeFileSync(path.resolve(outDir, "404.html"), index);
 
-      const catalog = articlesCatalogPath();
-      if (!catalog) {
+      const articles = buildBlogCatalog();
+      if (articles.length === 0) {
         console.warn(
           "[blog-share-pages] articles catalog not found; /blog/:slug uses the 404 fallback",
         );
         return;
       }
-      const articles = readLocalizedBlogArticles(fs.readFileSync(catalog, "utf8"));
       for (const page of localizedBlogFiles(articles, PORTFOLIO_ORIGIN)) {
         const filePath = path.resolve(outDir, page.fileName);
         fs.mkdirSync(path.dirname(filePath), { recursive: true });
