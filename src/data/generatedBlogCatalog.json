@@ -1,0 +1,174 @@
+{
+  "articles": [
+    {
+      "slug": "autonomia-contexto-e-limites",
+      "locales": {
+        "pt": {
+          "title": "“Pode decidir.” Seu time tem autonomia ou só ficou sozinho?",
+          "description": "A liberdade de decidir precisa vir acompanhada de contexto, limites e apoio. Sem isso, delegação pode virar abandono."
+        },
+        "en": {
+          "title": "“You can decide.” Does your team have autonomy, or has it been left alone?",
+          "description": "Decision-making freedom needs context, boundaries and support. Without them, delegation can become abandonment."
+        },
+        "es": {
+          "title": "“Puedes decidir.” ¿Tu equipo tiene autonomía o se quedó solo?",
+          "description": "La libertad para decidir necesita contexto, límites y apoyo. Sin ellos, la delegación puede convertirse en abandono."
+        }
+      }
+    },
+    {
+      "slug": "estimativa-nao-e-promessa",
+      "locales": {
+        "pt": {
+          "title": "Estimativa não é promessa. Em que reunião ela virou garantia?",
+          "description": "Uma previsão perde utilidade quando suas premissas desaparecem e o número passa a ser tratado como certeza."
+        },
+        "en": {
+          "title": "An estimate is not a promise. Which meeting turned it into a guarantee?",
+          "description": "A forecast loses usefulness when its assumptions disappear and the number is treated as certainty."
+        },
+        "es": {
+          "title": "Una estimación no es una promesa. ¿En qué reunión se convirtió en garantía?",
+          "description": "Una previsión pierde utilidad cuando desaparecen sus supuestos y el número empieza a tratarse como una certeza."
+        }
+      }
+    },
+    {
+      "slug": "ia-processo-consegue-acompanhar",
+      "locales": {
+        "pt": {
+          "title": "A IA acelerou o código. Por que a entrega continua esperando?",
+          "description": "Produzir código mais rápido não elimina as filas de revisão, os requisitos mal definidos nem a espera por validação."
+        },
+        "en": {
+          "title": "AI sped up the code. Why is delivery still waiting?",
+          "description": "Producing code faster does not remove review queues, unclear requirements or delays in validation."
+        },
+        "es": {
+          "title": "La IA aceleró el código. ¿Por qué la entrega sigue esperando?",
+          "description": "Producir código más rápido no elimina las colas de revisión, los requisitos confusos ni la espera por validación."
+        }
+      }
+    },
+    {
+      "slug": "code-review-tambem-e-lideranca",
+      "locales": {
+        "pt": {
+          "title": "Code review também é liderança: o que seus comentários estão ensinando?",
+          "description": "Uma revisão de código transmite critérios, contexto e formas de colaboração. Seus comentários podem desenvolver o time ou reforçar dependência."
+        },
+        "en": {
+          "title": "Code review is leadership too: what are your comments teaching?",
+          "description": "A code review communicates criteria, context and ways of working together. Your comments can develop a team or reinforce dependency."
+        },
+        "es": {
+          "title": "La revisión de código también es liderazgo: ¿qué enseñan tus comentarios?",
+          "description": "Revisar código transmite criterios, contexto y formas de colaboración. Los comentarios pueden desarrollar al equipo o reforzar la dependencia."
+        }
+      }
+    },
+    {
+      "slug": "prazo-escopo-qualidade",
+      "locales": {
+        "pt": {
+          "title": "Prazo, escopo e qualidade: quem decidiu que cabia tudo?",
+          "description": "Quando a data não muda e o escopo continua crescendo, decisões de projeto acabam sendo tomadas silenciosamente no código."
+        },
+        "en": {
+          "title": "Deadline, scope and quality: who decided everything would fit?",
+          "description": "When the date stays fixed and scope keeps growing, project decisions can end up being made quietly inside the code."
+        },
+        "es": {
+          "title": "Plazo, alcance y calidad: ¿quién decidió que cabía todo?",
+          "description": "Cuando la fecha no cambia y el alcance sigue creciendo, las decisiones del proyecto pueden acabar ocultas en el código."
+        }
+      }
+    },
+    {
+      "slug": "time-heroi-ou-processo",
+      "locales": {
+        "pt": {
+          "title": "Seu time precisa de um herói? Talvez precise parar de depender dele.",
+          "description": "Pessoas indispensáveis podem esconder um sistema de trabalho frágil. Conhecimento compartilhado e processos úteis reduzem essa dependência."
+        },
+        "en": {
+          "title": "Does your team need a hero? It may need to stop depending on one.",
+          "description": "Indispensable people can hide a fragile way of working. Shared knowledge and useful processes reduce that dependency."
+        },
+        "es": {
+          "title": "¿Tu equipo necesita un héroe? Quizá necesita dejar de depender de él.",
+          "description": "Las personas indispensables pueden ocultar una forma de trabajo frágil. Compartir conocimiento y crear procesos útiles reduce esa dependencia."
+        }
+      }
+    },
+    {
+      "slug": "melhor-desenvolvedor-proximo-lider",
+      "locales": {
+        "pt": {
+          "title": "O melhor desenvolvedor precisa virar líder? A promoção pode estar errada.",
+          "description": "Excelência técnica e liderança se encontram, mas não são a mesma competência. Uma carreira saudável precisa oferecer caminhos reais para ambas."
+        },
+        "en": {
+          "title": "Should your best developer become a manager? The promotion might be wrong.",
+          "description": "Technical excellence and leadership overlap, but they are different capabilities. Healthy careers need meaningful paths for both."
+        },
+        "es": {
+          "title": "¿El mejor desarrollador debe ser el próximo líder? La promoción puede estar equivocada.",
+          "description": "La excelencia técnica y el liderazgo se relacionan, pero exigen capacidades diferentes. Una carrera saludable necesita caminos reales para ambos."
+        }
+      }
+    },
+    {
+      "slug": "do-codigo-ao-contexto",
+      "locales": {
+        "pt": {
+          "title": "Do código ao contexto: você está liderando ou só resolvendo tudo?",
+          "description": "A transição para a liderança exige mudar a forma de contribuir: menos centralização, mais contexto, desenvolvimento de pessoas e decisões compartilhadas."
+        },
+        "en": {
+          "title": "From code to context: are you leading or just fixing everything?",
+          "description": "Moving into leadership means changing how you contribute through shared context, delegation and the development of other people."
+        },
+        "es": {
+          "title": "Del código al contexto: ¿estás liderando o simplemente resolviendo todo?",
+          "description": "Asumir el liderazgo implica cambiar la forma de contribuir: compartir contexto, delegar y desarrollar a otras personas."
+        }
+      }
+    },
+    {
+      "slug": "desenvolvedores-escravos-da-tecnologia-ia",
+      "locales": {
+        "pt": {
+          "title": "Desenvolvedores, analistas e DBAs: escravos da tecnologia na era da IA?",
+          "description": "Uma reflexão sobre a necessidade de continuar aprendendo em tecnologia, agora que a inteligência artificial participa cada vez mais do trabalho. Como acompanhar as mudanças sem transformar a carreira em uma corrida infinita?"
+        },
+        "en": {
+          "title": "Developers, analysts, and DBAs: slaves to technology in the age of AI?",
+          "description": "A reflection on the need to keep learning in technology now that artificial intelligence takes a growing part in the work. How do you keep up with change without turning a career into an endless race?"
+        },
+        "es": {
+          "title": "Desarrolladores, analistas y DBAs: ¿esclavos de la tecnología en la era de la IA?",
+          "description": "Una reflexión sobre la necesidad de seguir aprendiendo en tecnología, ahora que la inteligencia artificial participa cada vez más del trabajo. ¿Cómo acompañar los cambios sin convertir la profesión en una carrera infinita?"
+        }
+      }
+    },
+    {
+      "slug": "o-agente-secreto",
+      "locales": {
+        "pt": {
+          "title": "O Agente Secreto: quem responde quando a IA começa a agir nas organizações?",
+          "description": "Quando a inteligência artificial deixa de responder e passa a agir, a autonomia pode ser delegada, mas a responsabilidade continua humana."
+        },
+        "en": {
+          "title": "The Secret Agent: who answers when AI starts acting inside organizations?",
+          "description": "When artificial intelligence stops only answering and starts acting, autonomy can be delegated, but accountability stays human."
+        },
+        "es": {
+          "title": "El agente secreto: ¿quién responde cuando la IA empieza a actuar en las organizaciones?",
+          "description": "Cuando la inteligencia artificial deja de responder y empieza a actuar, la autonomía puede delegarse, pero la responsabilidad sigue siendo humana."
+        }
+      }
+    }
+  ]
+}
